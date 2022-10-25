@@ -45,7 +45,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# Sponsorname contest details
+# zkSync contest details
 - TBD main award pot
 - TBD gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
