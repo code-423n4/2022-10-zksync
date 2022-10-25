@@ -12,21 +12,6 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 ---
 
-# Contest setup
-
-## 🐺 C4: Set up repos
-- [ ] Create a new private repo named `YYYY-MM-sponsorname` using this repo as a template.
-- [ ] Rename this repo to reflect contest date (if applicable)
-- [ ] Rename contest H1 below
-- [ ] Update pot sizes
-- [ ] Fill in start and end times in contest bullets below
-- [ ] Add link to submission form in contest details below
-- [ ] Move any relevant information in "contest scope information" above to the bottom of this readme.
-- [ ] Add matching info to the [code423n4.com public contest data here](https://github.com/code-423n4/code423n4.com/blob/main/_data/contests/contests.csv))
-- [ ] Add sponsor to this private repo with 'maintain' level access.
-- [ ] Send the sponsor contact the url for this repo to follow the instructions below and add contracts here. 
-- [ ] Delete this checklist.
-
 # Repo setup
 
 ## ⭐️ Sponsor: Add code to this repo
@@ -66,7 +51,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/YYYY-MM-sponsorName-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts TBD XXX XXX XX 20:00 UTC
+- Starts October 28, 2022 20:00 UTC
 - Ends TBD XXX XXX XX 20:00 UTC
 
 ## C4udit / Publicly Known Issues
@@ -97,30 +82,30 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 
 *Describe any novel or unique curve logic or mathematical models implemented in the contracts*
 
-**C4 staff TODO: fill in scoping form details here for sponsor to confirm or edit**
+**Please confirm or edit the following scoping details**
 
 ## Scoping Details 
 ```
-- If you have a public code repo, please share it here:  
-- How many contracts are in scope?:   
-- Total SLoC for these contracts?:  
-- How many external imports are there?:  
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  
-- Does most of your code generally use composition or inheritance?:   
-- How many external calls?:   
-- What is the overall line coverage percentage provided by your tests?:  
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   
-- Please describe required context:   
-- Does it use an oracle?:  
-- Does the token conform to the ERC20 standard?:  
-- Are there any novel or unique curve logic or mathematical models?: 
-- Does it use a timelock function?:  
-- Is it an NFT?: 
-- Does it have an AMM?:   
-- Is it a fork of a popular project?:   
-- Does it use rollups?:   
-- Is it multi-chain?:  
-- Does it use a side-chain?: 
+- If you have a public code repo, please share it here: N/A
+- How many contracts are in scope?: 35   
+- Total SLoC for these contracts?: 2,281
+- How many external imports are there?: 1
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  34
+- Does most of your code generally use composition or inheritance?: Yes 
+- How many external calls?: 0
+- What is the overall line coverage percentage provided by your tests?:  Not sure.
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: Yes
+- Please describe required context: Zero knowledge rollups
+- Does it use an oracle?: No
+- Does the token conform to the ERC20 standard?: No token
+- Are there any novel or unique curve logic or mathematical models?: Not in L1
+- Does it use a timelock function?: Yes
+- Is it an NFT?: No
+- Does it have an AMM?: No
+- Is it a fork of a popular project?: No
+- Does it use rollups?: Yes
+- Is it multi-chain?:  No
+- Does it use a side-chain?: No
 ```
 
 # Tests
