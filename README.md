@@ -45,14 +45,14 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# zkSync contest details
-- TBD main award pot
-- TBD gas optimization award pot
+# zkSync v2 contest details
+- $142,500 USDC main award pot
+- $7,500 gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/YYYY-MM-sponsorName-contest/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2022-10-zksync-v2-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts October 28, 2022 20:00 UTC
-- Ends TBD XXX XXX XX 20:00 UTC
+- Ends November 9, 2022 20:00 UTC
 
 ## C4udit / Publicly Known Issues
 
