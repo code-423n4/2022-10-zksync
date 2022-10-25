@@ -46,7 +46,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 ---
 
 # zkSync v2 contest details
-- Total Award Pool: $165,500 USDC
+- Total Prize Pool: $165,500 USDC
   - HM awards: $127,500 USDC
   - QA report awards: $15,000 USDC
   - Gas report awards: $7,500 USDC
