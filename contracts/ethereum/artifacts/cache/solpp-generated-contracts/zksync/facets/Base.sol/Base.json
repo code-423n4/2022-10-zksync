@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Base",
+  "sourceName": "cache/solpp-generated-contracts/zksync/facets/Base.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122041b7868b227fba7b90616c36faec61a1ccc64b54092b78e17279ce051b0f933764736f6c63430008110033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122041b7868b227fba7b90616c36faec61a1ccc64b54092b78e17279ce051b0f933764736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

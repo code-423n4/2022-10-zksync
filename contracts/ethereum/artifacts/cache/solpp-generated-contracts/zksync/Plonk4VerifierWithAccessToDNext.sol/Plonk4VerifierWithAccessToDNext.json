@@ -1,0 +1,1733 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Plonk4VerifierWithAccessToDNext",
+  "sourceName": "cache/solpp-generated-contracts/zksync/Plonk4VerifierWithAccessToDNext.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "zero",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "alpha",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "gamma",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[9]",
+              "name": "alpha_values",
+              "type": "tuple[9]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "eta",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_lookup",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "gamma_lookup",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_plus_one",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_gamma",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "v",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "u",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z_minus_last_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "l_0_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "l_n_minus_one_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "t",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "tp",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Plonk4VerifierWithAccessToDNext.PartialVerifierState",
+          "name": "state",
+          "type": "tuple"
+        }
+      ],
+      "name": "compute_powers_of_alpha",
+      "outputs": [],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "domain_size",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "num_inputs",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[2]",
+              "name": "gate_selectors_commitments",
+              "type": "tuple[2]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[8]",
+              "name": "gate_setup_commitments",
+              "type": "tuple[8]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "permutation_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_selector_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "lookup_tables_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_table_type_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[3]",
+              "name": "non_residues",
+              "type": "tuple[3]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G2Point[2]",
+              "name": "g2_elements",
+              "type": "tuple[2]"
+            }
+          ],
+          "internalType": "struct VerificationKey",
+          "name": "vk",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256[]",
+              "name": "input_values",
+              "type": "uint256[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "state_polys_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "copy_permutation_grand_product_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "quotient_poly_parts_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[4]",
+              "name": "state_polys_openings_at_z",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[1]",
+              "name": "state_polys_openings_at_z_omega",
+              "type": "tuple[1]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[1]",
+              "name": "gate_selectors_openings_at_z",
+              "type": "tuple[1]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[3]",
+              "name": "copy_permutation_polys_openings_at_z",
+              "type": "tuple[3]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "copy_permutation_grand_product_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "quotient_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "linearization_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_s_poly_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_grand_product_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_s_poly_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_grand_product_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_t_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_t_poly_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_selector_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_table_type_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "opening_proof_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "opening_proof_at_z_omega",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Plonk4VerifierWithAccessToDNext.Proof",
+          "name": "proof",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "zero",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "alpha",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "gamma",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[9]",
+              "name": "alpha_values",
+              "type": "tuple[9]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "eta",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_lookup",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "gamma_lookup",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_plus_one",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_gamma",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "v",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "u",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z_minus_last_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "l_0_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "l_n_minus_one_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "t",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "tp",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Plonk4VerifierWithAccessToDNext.PartialVerifierState",
+          "name": "state",
+          "type": "tuple"
+        }
+      ],
+      "name": "prepare_queries",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[13]",
+              "name": "commitments_at_z",
+              "type": "tuple[13]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[13]",
+              "name": "values_at_z",
+              "type": "tuple[13]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[6]",
+              "name": "commitments_at_z_omega",
+              "type": "tuple[6]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[6]",
+              "name": "values_at_z_omega",
+              "type": "tuple[6]"
+            }
+          ],
+          "internalType": "struct Plonk4VerifierWithAccessToDNext.Queries",
+          "name": "queries",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "domain_size",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "num_inputs",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[2]",
+              "name": "gate_selectors_commitments",
+              "type": "tuple[2]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[8]",
+              "name": "gate_setup_commitments",
+              "type": "tuple[8]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "permutation_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_selector_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "lookup_tables_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_table_type_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[3]",
+              "name": "non_residues",
+              "type": "tuple[3]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G2Point[2]",
+              "name": "g2_elements",
+              "type": "tuple[2]"
+            }
+          ],
+          "internalType": "struct VerificationKey",
+          "name": "vk",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256[]",
+              "name": "input_values",
+              "type": "uint256[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "state_polys_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "copy_permutation_grand_product_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point[4]",
+              "name": "quotient_poly_parts_commitments",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[4]",
+              "name": "state_polys_openings_at_z",
+              "type": "tuple[4]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[1]",
+              "name": "state_polys_openings_at_z_omega",
+              "type": "tuple[1]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[1]",
+              "name": "gate_selectors_openings_at_z",
+              "type": "tuple[1]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[3]",
+              "name": "copy_permutation_polys_openings_at_z",
+              "type": "tuple[3]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "copy_permutation_grand_product_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "quotient_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "linearization_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_s_poly_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "lookup_grand_product_commitment",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_s_poly_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_grand_product_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_t_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_t_poly_opening_at_z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_selector_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "lookup_table_type_poly_opening_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "opening_proof_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "opening_proof_at_z_omega",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Plonk4VerifierWithAccessToDNext.Proof",
+          "name": "proof",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "zero",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "alpha",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "gamma",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr[9]",
+              "name": "alpha_values",
+              "type": "tuple[9]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "eta",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_lookup",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "gamma_lookup",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_plus_one",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "beta_gamma",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "v",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "u",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "z_minus_last_omega",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "l_0_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "l_n_minus_one_at_z",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.Fr",
+              "name": "t",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct PairingsBn254.G1Point",
+              "name": "tp",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Plonk4VerifierWithAccessToDNext.PartialVerifierState",
+          "name": "state",
+          "type": "tuple"
+        }
+      ],
+      "name": "rescue_custom_gate_linearization_contribution",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "X",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "Y",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct PairingsBn254.G1Point",
+          "name": "result",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506114b6806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633ec236cb14610046578063c2ef60411461006f578063fec4e96e1461008f575b600080fd5b6100596100543660046111c1565b6100a4565b60405161006691906112eb565b60405180910390f35b61008261007d3660046111c1565b6101f9565b6040516100669190611364565b6100a261009d366004611405565b61055d565b005b604080518082019091526000808252602082015260408051602081019091526000815260408051602081019091526000815260808501516100fd9060005b60200201516040805160208101909152600081529051815290565b9150610109828061060b565b60808501516101219060015b60200201518390610625565b60808401516101399060015b6020020151839061060b565b6101438183610657565b60808501516101539060016100e2565b915061015f828061060b565b608085015161016f906002610115565b608084015161017f90600261012d565b6101898183610657565b60808501516101999060026100e2565b60808601519092506101ac90600061012d565b60808501516101bc906003610115565b60808401516101cc90600361012d565b6101d68183610657565b60608601516101ef90829060015b602002015190610671565b9695505050505050565b6102016107d2565b600260005b6004811015610284578460200151816004811061022557610225611429565b6020020151835183600d811061023d5761023d611429565b60200201526080850151816004811061025857610258611429565b6020020151836020015183600d811061027357610273611429565b602002015260019182019101610206565b50606085015151825182600d811061029e5761029e611429565b602002015260c084015160006020020151826020015182600d81106102c5576102c5611429565b602002015260010160005b6102dc6001600461143f565b811015610358578560a0015181600481106102f9576102f9611429565b6020020151835183600d811061031157610311611429565b602002015260e0850151816003811061032c5761032c611429565b6020020151836020015183600d811061034757610347611429565b6020020152600191820191016102d0565b50604084810151908301515260208401516103756001600461143f565b6004811061038557610385611429565b6020908102919091015160408401518201526101008501516060840180519190915260a0808701515191519092015260e086015151908401516000906103db906040805160208101909152600081529051815290565b905060015b600481101561042e57610403828960e0015183600481106101e4576101e4611429565b61024087018190526104169084906106b6565b60a086015161042690839061060b565b6001016103e0565b508351829084600d811061044457610444611429565b6020020181905250856101e00151846020015184600d811061046857610468611429565b602002015260c087015184516001949094019384600d811061048c5761048c611429565b6020020181905250856102200151846020015184600d81106104b0576104b0611429565b602002015261010087015184516001949094019384600d81106104d5576104d5611429565b6020020181905250856102400151846020015184600d81106104f9576104f9611429565b602002015250610160850151604084810180518201929092526101a0870151606080870180519093019190915261018088015183518201526101c0880151825190910152905160809081019290925261020090950151945101939093529392505050565b60208101515160000361056f57600080fd5b61057960016106c5565b608082018051919091526020808301805160408051808501825260008082529251815294518401949094529051835192830190935281529051815260025b60098110156106065760208301516105d090839061060b565b60408051602081019091526000815282518152836080015182600981106105f9576105f9611429565b60200201526001016105b7565b505050565b600080516020611461833981519152815183510990915250565b600080516020611461833981519152815161064e9060008051602061146183398151915261143f565b83510890915250565b600080516020611461833981519152815183510890915250565b60408051808201909152600080825260208201528251158015610698575082602001516001145b156106a557600060208401525b6106b0838383610700565b92915050565b6106c1828284610742565b5050565b60408051602081019091526000815260008051602061146183398151915282106106ee57600080fd5b50604080516020810190915290815290565b610708610811565b835181526020840151816001602002015282518160026020020152600060408360608460075afa90508061073b57600080fd5b5050505050565b815115801561075357506020820151155b1561076b578251815260209283015192019190915250565b825115801561077c57506020830151155b15610791578151815260209182015191015250565b61079961082f565b835181526020808501518183015283516040808401919091529084015160608301526000908360808460065afa90508061073b57600080fd5b60405180608001604052806107e561084d565b81526020016107f2610887565b81526020016107ff6108bc565b815260200161080c6108e6565b905290565b60405180606001604052806003906020820280368337509192915050565b60405180608001604052806004906020820280368337509192915050565b604051806101a00160405280600d905b604080518082019091526000808252602082015281526020019060019003908161085d5790505090565b604051806101a00160405280600d905b6040805160208101909152600081528152602001906001900390816108975790505090565b604080516101008101909152600060c0820181815260e0830191909152815260056020820161085d565b6040805160e08101909152600060c082019081528152600560208201610897565b634e487b7160e01b600052604160045260246000fd5b604080519081016001600160401b038111828210171561093f5761093f610907565b60405290565b6040516102a081016001600160401b038111828210171561093f5761093f610907565b60405161026081016001600160401b038111828210171561093f5761093f610907565b60405161016081016001600160401b038111828210171561093f5761093f610907565b604051608081016001600160401b038111828210171561093f5761093f610907565b6000602082840312156109e257600080fd5b604051602081018181106001600160401b0382111715610a0457610a04610907565b6040529135825250919050565b600060408284031215610a2357600080fd5b610a2b61091d565b9050813581526020820135602082015292915050565b600082601f830112610a5257600080fd5b610a5a61091d565b806080840185811115610a6c57600080fd5b845b81811015610a9057610a808782610a11565b8452602090930192604001610a6e565b509095945050505050565b600082601f830112610aac57600080fd5b6040805161010081018181106001600160401b0382111715610ad057610ad0610907565b825280610200850186811115610ae557600080fd5b855b81811015610b0857610af98882610a11565b83526020909201918401610ae7565b50919695505050505050565b600082601f830112610b2557600080fd5b610b2d6109ae565b80610100840185811115610b4057600080fd5b845b81811015610a9057610b548782610a11565b8452602090930192604001610b42565b600082601f830112610b7557600080fd5b604051606081018181106001600160401b0382111715610b9757610b97610907565b604052806060840185811115610bac57600080fd5b845b81811015610bce57610bc087826109d0565b835260209283019201610bae565b509195945050505050565b600082601f830112610bea57600080fd5b610bf261091d565b806040840185811115610c0457600080fd5b845b81811015610a90578035845260209384019301610c06565b600082601f830112610c2f57600080fd5b610c3761091d565b80610100840185811115610c4a57600080fd5b845b81811015610a905760808188031215610c655760008081fd5b610c6d61091d565b610c778883610bd9565b8152610c868860408401610bd9565b6020828101919091529085529390930192608001610c4c565b600082601f830112610cb057600080fd5b813560206001600160401b0380831115610ccc57610ccc610907565b8260051b604051601f19603f83011681018181108482111715610cf157610cf1610907565b604052938452858101830193838101925087851115610d0f57600080fd5b83870191505b84821015610d2e57813583529183019190830190610d15565b979650505050505050565b600082601f830112610d4a57600080fd5b610d526109ae565b806080840185811115610d6457600080fd5b845b81811015610a9057610d7887826109d0565b845260209384019301610d66565b600082601f830112610d9757600080fd5b60405160208082018281106001600160401b0382111715610dba57610dba610907565b6040528184820186811115610dce57600080fd5b855b81811015610def57610de288826109d0565b8352918301918301610dd0565b50929695505050505050565b60006105a08284031215610e0e57600080fd5b610e16610945565b905081356001600160401b03811115610e2e57600080fd5b610e3a84828501610c9f565b825250610e4a8360208401610b14565b6020820152610120610e5e84828501610a11565b6040830152610160610e7285828601610b14565b6060840152610260610e8686828701610d39565b6080850152610e99866102e08701610d86565b60a0850152610eac866103008701610d86565b60c0850152610ebf866103208701610b64565b60e0850152610ed28661038087016109d0565b610100850152610ee6866103a087016109d0565b83850152610ef8866103c087016109d0565b610140850152610f0c866103e08701610a11565b82850152610f1e866104208701610a11565b610180850152610f328661046087016109d0565b6101a0850152610f468661048087016109d0565b6101c0850152610f5a866104a087016109d0565b6101e0850152610f6e866104c087016109d0565b610200850152610f82866104e087016109d0565b610220850152610f968661050087016109d0565b610240850152610faa866105208701610a11565b81850152505050610fbf836105608401610a11565b61028082015292915050565b600082601f830112610fdc57600080fd5b6040516101208082018281106001600160401b038211171561100057611000610907565b6040528301818582111561101357600080fd5b845b82811015610bce5761102787826109d0565b825260209182019101611015565b6000610380828403121561104857600080fd5b611050610968565b905061105c83836109d0565b815261106b83602084016109d0565b602082015261107d83604084016109d0565b604082015261108f83606084016109d0565b60608201526110a18360808401610fcb565b60808201526101a06110b5848285016109d0565b60a08301526101c06110c9858286016109d0565b60c08401526101e06110dd868287016109d0565b60e08501526102006110f1878288016109d0565b610100860152610220611106888289016109d0565b61012087015261024061111b89828a016109d0565b61014088015261112f896102608a016109d0565b610160880152611143896102808a016109d0565b610180880152611157896102a08a016109d0565b86880152611169896102c08a016109d0565b8588015261117b896102e08a016109d0565b8488015261118d896103008a016109d0565b8388015261119f896103208a016109d0565b828801526111b1896103408a01610a11565b8188015250505050505092915050565b6000806000838503610a608112156111d857600080fd5b6106c0808212156111e857600080fd5b6111f061098b565b9150853582526020860135602083015261120d87604088016109d0565b604083015261121f8760608801610a41565b60608301526112318760e08801610a9b565b6080830152611244876102e08801610b14565b60a0830152611257876103e08801610a11565b60c083015261126a876104208801610b14565b60e083015261127d876105208801610a11565b610100830152611291876105608801610b64565b6101208301526112a5876105c08801610c1e565b6101408301529093508401356001600160401b038111156112c557600080fd5b6112d186828701610dfb565b9250506112e2856106e08601611035565b90509250925092565b8151815260208083015190820152604081016106b0565b8060005b600681101561133a5761132484835180518252602090810151910152565b6040939093019260209190910190600101611306565b50505050565b8060005b600681101561133a57815151845260209384019390910190600101611344565b81516107208201908260005b600d8110156113a45761138e82845180518252602090810151910152565b6020929092019160409190910190600101611370565b505050602080840151610340840160005b600d8110156113d357825151825291830191908301906001016113b5565b5050505060408301516113ea6104e0840182611302565b5060608301516113fe610660840182611340565b5092915050565b6000610380828403121561141857600080fd5b6114228383611035565b9392505050565b634e487b7160e01b600052603260045260246000fd5b818103818111156106b057634e487b7160e01b600052601160045260246000fdfe30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001a2646970667358221220f10c685e5ef37b955275c023a586c3f8f1353fa72b990e0f06f2cb372b82047164736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633ec236cb14610046578063c2ef60411461006f578063fec4e96e1461008f575b600080fd5b6100596100543660046111c1565b6100a4565b60405161006691906112eb565b60405180910390f35b61008261007d3660046111c1565b6101f9565b6040516100669190611364565b6100a261009d366004611405565b61055d565b005b604080518082019091526000808252602082015260408051602081019091526000815260408051602081019091526000815260808501516100fd9060005b60200201516040805160208101909152600081529051815290565b9150610109828061060b565b60808501516101219060015b60200201518390610625565b60808401516101399060015b6020020151839061060b565b6101438183610657565b60808501516101539060016100e2565b915061015f828061060b565b608085015161016f906002610115565b608084015161017f90600261012d565b6101898183610657565b60808501516101999060026100e2565b60808601519092506101ac90600061012d565b60808501516101bc906003610115565b60808401516101cc90600361012d565b6101d68183610657565b60608601516101ef90829060015b602002015190610671565b9695505050505050565b6102016107d2565b600260005b6004811015610284578460200151816004811061022557610225611429565b6020020151835183600d811061023d5761023d611429565b60200201526080850151816004811061025857610258611429565b6020020151836020015183600d811061027357610273611429565b602002015260019182019101610206565b50606085015151825182600d811061029e5761029e611429565b602002015260c084015160006020020151826020015182600d81106102c5576102c5611429565b602002015260010160005b6102dc6001600461143f565b811015610358578560a0015181600481106102f9576102f9611429565b6020020151835183600d811061031157610311611429565b602002015260e0850151816003811061032c5761032c611429565b6020020151836020015183600d811061034757610347611429565b6020020152600191820191016102d0565b50604084810151908301515260208401516103756001600461143f565b6004811061038557610385611429565b6020908102919091015160408401518201526101008501516060840180519190915260a0808701515191519092015260e086015151908401516000906103db906040805160208101909152600081529051815290565b905060015b600481101561042e57610403828960e0015183600481106101e4576101e4611429565b61024087018190526104169084906106b6565b60a086015161042690839061060b565b6001016103e0565b508351829084600d811061044457610444611429565b6020020181905250856101e00151846020015184600d811061046857610468611429565b602002015260c087015184516001949094019384600d811061048c5761048c611429565b6020020181905250856102200151846020015184600d81106104b0576104b0611429565b602002015261010087015184516001949094019384600d81106104d5576104d5611429565b6020020181905250856102400151846020015184600d81106104f9576104f9611429565b602002015250610160850151604084810180518201929092526101a0870151606080870180519093019190915261018088015183518201526101c0880151825190910152905160809081019290925261020090950151945101939093529392505050565b60208101515160000361056f57600080fd5b61057960016106c5565b608082018051919091526020808301805160408051808501825260008082529251815294518401949094529051835192830190935281529051815260025b60098110156106065760208301516105d090839061060b565b60408051602081019091526000815282518152836080015182600981106105f9576105f9611429565b60200201526001016105b7565b505050565b600080516020611461833981519152815183510990915250565b600080516020611461833981519152815161064e9060008051602061146183398151915261143f565b83510890915250565b600080516020611461833981519152815183510890915250565b60408051808201909152600080825260208201528251158015610698575082602001516001145b156106a557600060208401525b6106b0838383610700565b92915050565b6106c1828284610742565b5050565b60408051602081019091526000815260008051602061146183398151915282106106ee57600080fd5b50604080516020810190915290815290565b610708610811565b835181526020840151816001602002015282518160026020020152600060408360608460075afa90508061073b57600080fd5b5050505050565b815115801561075357506020820151155b1561076b578251815260209283015192019190915250565b825115801561077c57506020830151155b15610791578151815260209182015191015250565b61079961082f565b835181526020808501518183015283516040808401919091529084015160608301526000908360808460065afa90508061073b57600080fd5b60405180608001604052806107e561084d565b81526020016107f2610887565b81526020016107ff6108bc565b815260200161080c6108e6565b905290565b60405180606001604052806003906020820280368337509192915050565b60405180608001604052806004906020820280368337509192915050565b604051806101a00160405280600d905b604080518082019091526000808252602082015281526020019060019003908161085d5790505090565b604051806101a00160405280600d905b6040805160208101909152600081528152602001906001900390816108975790505090565b604080516101008101909152600060c0820181815260e0830191909152815260056020820161085d565b6040805160e08101909152600060c082019081528152600560208201610897565b634e487b7160e01b600052604160045260246000fd5b604080519081016001600160401b038111828210171561093f5761093f610907565b60405290565b6040516102a081016001600160401b038111828210171561093f5761093f610907565b60405161026081016001600160401b038111828210171561093f5761093f610907565b60405161016081016001600160401b038111828210171561093f5761093f610907565b604051608081016001600160401b038111828210171561093f5761093f610907565b6000602082840312156109e257600080fd5b604051602081018181106001600160401b0382111715610a0457610a04610907565b6040529135825250919050565b600060408284031215610a2357600080fd5b610a2b61091d565b9050813581526020820135602082015292915050565b600082601f830112610a5257600080fd5b610a5a61091d565b806080840185811115610a6c57600080fd5b845b81811015610a9057610a808782610a11565b8452602090930192604001610a6e565b509095945050505050565b600082601f830112610aac57600080fd5b6040805161010081018181106001600160401b0382111715610ad057610ad0610907565b825280610200850186811115610ae557600080fd5b855b81811015610b0857610af98882610a11565b83526020909201918401610ae7565b50919695505050505050565b600082601f830112610b2557600080fd5b610b2d6109ae565b80610100840185811115610b4057600080fd5b845b81811015610a9057610b548782610a11565b8452602090930192604001610b42565b600082601f830112610b7557600080fd5b604051606081018181106001600160401b0382111715610b9757610b97610907565b604052806060840185811115610bac57600080fd5b845b81811015610bce57610bc087826109d0565b835260209283019201610bae565b509195945050505050565b600082601f830112610bea57600080fd5b610bf261091d565b806040840185811115610c0457600080fd5b845b81811015610a90578035845260209384019301610c06565b600082601f830112610c2f57600080fd5b610c3761091d565b80610100840185811115610c4a57600080fd5b845b81811015610a905760808188031215610c655760008081fd5b610c6d61091d565b610c778883610bd9565b8152610c868860408401610bd9565b6020828101919091529085529390930192608001610c4c565b600082601f830112610cb057600080fd5b813560206001600160401b0380831115610ccc57610ccc610907565b8260051b604051601f19603f83011681018181108482111715610cf157610cf1610907565b604052938452858101830193838101925087851115610d0f57600080fd5b83870191505b84821015610d2e57813583529183019190830190610d15565b979650505050505050565b600082601f830112610d4a57600080fd5b610d526109ae565b806080840185811115610d6457600080fd5b845b81811015610a9057610d7887826109d0565b845260209384019301610d66565b600082601f830112610d9757600080fd5b60405160208082018281106001600160401b0382111715610dba57610dba610907565b6040528184820186811115610dce57600080fd5b855b81811015610def57610de288826109d0565b8352918301918301610dd0565b50929695505050505050565b60006105a08284031215610e0e57600080fd5b610e16610945565b905081356001600160401b03811115610e2e57600080fd5b610e3a84828501610c9f565b825250610e4a8360208401610b14565b6020820152610120610e5e84828501610a11565b6040830152610160610e7285828601610b14565b6060840152610260610e8686828701610d39565b6080850152610e99866102e08701610d86565b60a0850152610eac866103008701610d86565b60c0850152610ebf866103208701610b64565b60e0850152610ed28661038087016109d0565b610100850152610ee6866103a087016109d0565b83850152610ef8866103c087016109d0565b610140850152610f0c866103e08701610a11565b82850152610f1e866104208701610a11565b610180850152610f328661046087016109d0565b6101a0850152610f468661048087016109d0565b6101c0850152610f5a866104a087016109d0565b6101e0850152610f6e866104c087016109d0565b610200850152610f82866104e087016109d0565b610220850152610f968661050087016109d0565b610240850152610faa866105208701610a11565b81850152505050610fbf836105608401610a11565b61028082015292915050565b600082601f830112610fdc57600080fd5b6040516101208082018281106001600160401b038211171561100057611000610907565b6040528301818582111561101357600080fd5b845b82811015610bce5761102787826109d0565b825260209182019101611015565b6000610380828403121561104857600080fd5b611050610968565b905061105c83836109d0565b815261106b83602084016109d0565b602082015261107d83604084016109d0565b604082015261108f83606084016109d0565b60608201526110a18360808401610fcb565b60808201526101a06110b5848285016109d0565b60a08301526101c06110c9858286016109d0565b60c08401526101e06110dd868287016109d0565b60e08501526102006110f1878288016109d0565b610100860152610220611106888289016109d0565b61012087015261024061111b89828a016109d0565b61014088015261112f896102608a016109d0565b610160880152611143896102808a016109d0565b610180880152611157896102a08a016109d0565b86880152611169896102c08a016109d0565b8588015261117b896102e08a016109d0565b8488015261118d896103008a016109d0565b8388015261119f896103208a016109d0565b828801526111b1896103408a01610a11565b8188015250505050505092915050565b6000806000838503610a608112156111d857600080fd5b6106c0808212156111e857600080fd5b6111f061098b565b9150853582526020860135602083015261120d87604088016109d0565b604083015261121f8760608801610a41565b60608301526112318760e08801610a9b565b6080830152611244876102e08801610b14565b60a0830152611257876103e08801610a11565b60c083015261126a876104208801610b14565b60e083015261127d876105208801610a11565b610100830152611291876105608801610b64565b6101208301526112a5876105c08801610c1e565b6101408301529093508401356001600160401b038111156112c557600080fd5b6112d186828701610dfb565b9250506112e2856106e08601611035565b90509250925092565b8151815260208083015190820152604081016106b0565b8060005b600681101561133a5761132484835180518252602090810151910152565b6040939093019260209190910190600101611306565b50505050565b8060005b600681101561133a57815151845260209384019390910190600101611344565b81516107208201908260005b600d8110156113a45761138e82845180518252602090810151910152565b6020929092019160409190910190600101611370565b505050602080840151610340840160005b600d8110156113d357825151825291830191908301906001016113b5565b5050505060408301516113ea6104e0840182611302565b5060608301516113fe610660840182611340565b5092915050565b6000610380828403121561141857600080fd5b6114228383611035565b9392505050565b634e487b7160e01b600052603260045260246000fd5b818103818111156106b057634e487b7160e01b600052601160045260246000fdfe30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001a2646970667358221220f10c685e5ef37b955275c023a586c3f8f1353fa72b990e0f06f2cb372b82047164736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
