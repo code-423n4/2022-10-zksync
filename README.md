@@ -12,19 +12,6 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 ---
 
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 24 hours prior to contest start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the contest — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the contest. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
 ## ⭐️ Sponsor: Edit this README
 
 Under "SPONSORS ADD INFO HERE" heading below, include the following:
@@ -64,15 +51,22 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 
 *Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
-[ ⭐️ SPONSORS ADD INFO HERE ]
-
 # Overview
 
-*Please provide some context about the code being audited, and identify any areas of specific concern in reviewing the code. (This is a good place to link to your docs, if you have them.)*
+We are releasing Layer 1 smart contracts for [zkSync version 2.0](https://v2.zksync.io/) - a general-purpose zero knowledge rollup solution for Ethereum. For more information and fundamental concepts please refer to the documentation [here](https://v2-docs.zksync.io/dev/#fundamental-topics).
+
+This repository contains Layer 1 (i.e. Ethereum mainnet) part of zkSync v2.0, a set of Solidity smart contracts that take care of governance, upgradability, L1 to L2 communication, etc. Detailed description of these smart contracts and their purpose can be found [here](https://matterlabs.notion.site/zkSync-2-0-smart-contracts-overview-fad227fac94241898417771e4a415f83).
+
+Please pay special attention to any issues allowing:
+- Unauthorized upgrade
+- Successful verification of an invalid block
+- Execution of an unverified block
+
+While we are in Alpha version of the system it is assumed that Matter Labs, an operator/governor behind zkSync, is not malicious. Any findings that require governor privileges will therefore be considered irrelevant.
 
 # Scope
 
-*List all files in scope in the table below -- and feel free to add notes here to emphasize areas of focus.*
+**Waiting for the code to finalize**
 
 | Contract | SLOC | Purpose | Libraries used |  
 | ----------- | ----------- | ----------- | ----------- |
@@ -80,37 +74,10 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 
 ## Out of scope
 
+**Tests and hardhat plugins?**
 *List any files/contracts that are out of scope for this audit.*
 
-# Additional Context
-
-*Describe any novel or unique curve logic or mathematical models implemented in the contracts*
-
 **Please confirm or edit the following scoping details**
-
-## Scoping Details 
-```
-- If you have a public code repo, please share it here: N/A
-- How many contracts are in scope?: 35   
-- Total SLoC for these contracts?: 2,281
-- How many external imports are there?: 1
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  34
-- Does most of your code generally use composition or inheritance?: Yes 
-- How many external calls?: 0
-- What is the overall line coverage percentage provided by your tests?:  Not sure.
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: Yes
-- Please describe required context: Zero knowledge rollups
-- Does it use an oracle?: No
-- Does the token conform to the ERC20 standard?: No token
-- Are there any novel or unique curve logic or mathematical models?: Not in L1
-- Does it use a timelock function?: Yes
-- Is it an NFT?: No
-- Does it have an AMM?: No
-- Is it a fork of a popular project?: No
-- Does it use rollups?: Yes
-- Is it multi-chain?:  No
-- Does it use a side-chain?: No
-```
 
 # Tests
 
