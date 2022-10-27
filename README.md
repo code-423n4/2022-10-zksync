@@ -19,6 +19,8 @@
 2. [UPGRADE\_NOTICE\_PERIOD](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L9) is set to 0 during alpha.
 3. `supportsInterface` of `ERC-165` standard is not implemented.
 4. Solidity version is not pinned in the source files. It is pinned in the [config](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L82) instead.
+5. Implementation of the Diamond Cut is not fully EIP-2535 compatible, because of missing check for that replaced facet is distinct from old one.
+6. `unfreezeDiamond`/`emergencyFreezeDiamond`/`cancelDiamondCutProposal` are susceptible to reorg attack.
 
 The C4udit output for the contest can be found here, [include link to C4udit report], within an hour of contest opening.
 
@@ -126,7 +128,7 @@ zkSync 2.0 is a permissionless general-purpose ZK rollup. Similar to many L1 blo
 
 Although the audit is focused on the L1 part, a few notes to have a wider picture:
 
-- L2 smart contracts are executed on a zkEVM - virtual machine other than EVM.
+- L2 smart contracts are executed on a zkEVM.
 - There is a Solidity and Vyper compilers for L2 smart contracts.
 - There is a standard way to pass messages between L1 and L2. That is a part of the protocol.
 - There is no escape hatch mechanism yet, but it is planned to have one.
