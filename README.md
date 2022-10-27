@@ -24,18 +24,6 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 
 *Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
-# Overview
-We are releasing mart contracts for [zkSync version 2.0](https://v2.zksync.io/) - a general-purpose zero knowledge rollup solution for Ethereum. For more information and fundamental concepts please refer to the documentation [here](https://v2-docs.zksync.io/dev/#fundamental-topics).
-
-This repository contains Layer 1 (i.e. Ethereum mainnet) and some Layer 2 contracts of zkSync v2.0, a set of Solidity smart contracts that take care of governance, upgradability, L1 <-> L2 communication, bridging, allow listing etc. A detailed description of these smart contracts and their purpose can be found [here](https://matterlabs.notion.site/zkSync-2-0-smart-contracts-overview-fad227fac94241898417771e4a415f83).
-
-Please pay special attention to any issues allowing:
-- Unauthorized upgrade
-- Successful verification of an invalid block
-- Execution of an unverified block
-
-While we are in Alpha version of the system it is assumed that Matter Labs, an operator/governor behind zkSync, is not malicious. Any findings that require governor privileges will therefore be considered irrelevant.
-
 # Scope
 
 ## L1 contracts
@@ -123,18 +111,19 @@ All contracts are divided into `ethereum` and `zksync` subfolders, each of which
 
 Select the correct folder:
 
-```console
+```sh
   cd ethereum
 ```
 
 Install dependencies:
 
-```console
+```sh
   yarn
 ```
 
 Run tests:
-```console
+
+```sh
   yarn test
 ```
 
@@ -142,17 +131,122 @@ Run tests:
 
 Select the correct folder:
 
-```console
+```sh
   cd zksync
 ```
 
 Install dependencies:
 
-```console
+```sh
   yarn
 ```
 
 Run tests:
-```console
+
+```sh
   yarn test
 ```
+
+
+# Overview
+
+zkSync 2.0 is a permissionless general-purpose ZK rollup. Similar to many L1 blockchains and sidechains it enables deployment and interaction with turing-complete smart contracts.
+
+Although the audit is focused on the L1 part, a few notes to have a wider picture:
+
+- L2 smart contracts are executed on a zkEVM - virtual machine other than EVM.
+- There is a Solidity and Vyper compilers for L2 smart contracts.
+- There is a standard way to pass messages between L1 and L2. That is a part of the protocol.
+- There is no escape hatch mechanism yet, but it is planned to have one.
+
+More can be read in the [documentation](https://v2-docs.zksync.io/dev/rollups.html).
+
+## Glossary
+
+- Governor - privilege address that controls the upgradability of the network and sets other privilege addresses.
+- Validator/Operator - privilege address that can commit/verify/execute L2 blocks.
+- Facet - implementation contract. The word comes from the EIP-2535.
+- Security council - set of trusted addresses that can decrease upgrade timelock.
+
+## Overview
+
+The main idea of the protocol is to make the VM execution off-chain and commit zk/validity proof of its correctness onchain.
+
+Besides that, all data that is needed to restore the L2 state are also pushed onchain. There are two approaches, publishing inputs of L2 transactions onchain and publishing the state transition diff. Currently, zkSync follows the second option.
+
+### L1 Smart contracts
+
+#### Diamond
+
+Technically, the L1 smart contract acts as a connector between Ethereum (L1) and zkSync (L2). It is this that checks the validity proof and data availability, handles L2 <-> L1 communication, finalizes L2 state transition, etc.
+
+In addition to the L1 contract, there are important contracts in L2, they also can execute some logic. That L2 contracts are called system contracts, using L2 <-> L1 communication they can affect L1 and L2. L2 system contracts don't include in this audit scope, but they are mentioned in L1 contracts, specifically on `ExecutorFacet`. More details in [docs](https://v2-docs.zksync.io/dev/zksync-v2/system-contracts.html).
+
+##### DiamondProxy
+
+The main contract uses [EIP-2535](https://eips.ethereum.org/EIPS/eip-2535) diamond proxy pattern. It is an in-house implementation that is inspired by the [mudgen reference implementation](https://github.com/mudgen/Diamond). It has no external functions, only the fallback that delegates a call to one of the facets (target/implementation contract). So even an upgrade system is a separate facet that can be replaced.
+
+One of the differences from reference implementation is access freezability. Each of the facets has an associated parameter, that indicates if it is possible to freeze the access to the facet. The privilege actor can freeze the **diamond** (not a specific facet!) and all facets with the marker `isFreezable` should be inaccessible until the governor unfreezes the diamond. Note, that's a very dangerous thing since the diamond proxy can freeze the upgrade system, then the diamond will be frozen forever.
+
+##### DiamondInit
+
+It is a one-function contract, that implements the logic of initialing diamond proxy. It is called only once on the diamond constructor and doesn't save in the diamond as a facet.
+
+Implementation detail - function return magic value just like it is designed in [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271), but the magic value is 32 bytes in size.
+
+##### DiamondCutFacet
+
+These smart contracts manage the freezing/unfreezing and upgrades of the diamond proxy. That being said, the contract mustn't be frozen.
+
+Currently freezing and unfreezing are implemented as access control functions. It is fully controlled by the governor but can be changed later. The governor can call `emergencyFreezeDiamond` to freeze the diamond and `unfreezeDiamond` to restore it.
+
+Another purpose of `DiamondCutFacet` is to upgrade the facets. The upgrading is split into 2-3 phases:
+
+- `proposeDiamondCut` - proposing upgrade by governor.
+- `approveEmergencyDiamondCutAsSecurityCouncilMember` - approving upgrade by security council.
+- `executeDiamondCutProposal` - upgrade finalization.
+
+The upgrade itself characterizes by three variables:
+
+- `facetCuts` - a set of changes to the facets (adding new facets, removing facets, and replacing them).
+- pair `(address _initAddress, bytes _calldata)` for initializing the upgrade by making a delegate call to `_initAddress` with `_calldata` inputs.
+
+NOTE: `proposeDiamondCut` - commits data associated with an upgrade but does not execute it. While the upgrade is associated with `facetCuts` and `(address _initAddress, bytes _calldata)` the upgrade will be committed to the `facetCuts` and `_initAddress`. That's done on purpose, to let some freedom to the governor change calldata for the upgrade between proposing and executing it.
+
+##### GettersFacet
+
+Separate facet, whose only function is providing `view` and `pure` methods. It also implement [diamond loupe](https://eips.ethereum.org/EIPS/eip-2535#diamond-loupe) that made managing facets easier.
+
+##### GovernanceFacet
+
+Controlled the changes privilege address as governor and validators. Compact contract with a couple of functions, that only needed to change governor, validators or one of the parameters of the system (L2 bootloader bytecodehash, verifier address, verifier parameters, etc).
+
+##### MailboxFacet
+
+The facet that handles L2 <-> L1 communication, an overview for which can be found in [docs](https://v2-docs.zksync.io/dev/zksync-v2/l1-l2-interop.html#l1-l2-communication).
+
+The Mailbox care only about transferring information from L2 to L1 and the opposite, but doesn't hold and transfer any funds (ether, ERC20 tokens, or NFTs).
+
+L1 -> L2 communication implemented as requesting L2 transaction on L1 and executing in on L2. That means user can call the function on L1 contract to save data about transaction in some queue. Later on, a validator can process such transactions on L2 and mark them as processed on the L1 priority queue. Currently, that is used only for sending information from L1 to L2 or implementing a multi-layer protocol. But it is planned to use a priority queue for the censor-resistance mechanism. Relevant functions for L1 -> L2 communication: `requestL2Transaction`/`l2TransactionBaseCost`/`serializeL2Transaction`.
+
+L2 -> L1 communication, in contrast to L1 -> L2 communication, is based only on transferring the information, and not on the transaction execution on L1.
+
+From the L2 side, there is a special zkEVM opcode that saves `l2ToL1Log` in the L2 block. A validator will send all `l2ToL1Logs` when sending an L2 block to L1 (see `ExecutorFacet`). Later on, a user will be able to both read his `l2ToL1log` on L1 and *prove* that s/he sent it.
+
+From the L1 side, For each L2 block, Merkle root with such logs in leaves are calculated. Thus, a user can provide Merkle proof for each `l2ToL1Logs`.
+
+*NOTE*: The `l2ToL1Log` structure consists of fixed size fields! Because of this, it is inconvenient to send a lot of data from L2 and prove that they were sent on L1 using only `l2ToL1log`. To send a variable length message we use this trick:
+
+- One of the system contract accepts a arbitrary length message and sends a fixed length message with parameters `senderAddress == this`, `marker == true`, `key == msg.sender`, `value == keccak256(message)`.
+- The contract on L1 accepts all sent messages and if the message came from this system contract it requires that the preimage of `value` be provided.
+
+##### ExecutorFacet
+
+A contract that accepts L2 blocks, enforces data availability and checks the validity of zk-proof.
+
+The state transition is divided into three stages:
+
+- `commitBlocks` - check L2 block timestamp, save data for a block, prepare data for zk-proof
+- `proveBlocks` - validate zk-proof
+- `executeBlocks` - finalizing the state, marking L1 -> L2 communication processing, and saving Merkle tree with L2 logs.
+
