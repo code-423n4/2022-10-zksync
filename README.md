@@ -241,7 +241,7 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 Install dependencies:
 
 ```sh
-  yarn
+  yarn --ignore-engines
 ```
 
 Run tests:
