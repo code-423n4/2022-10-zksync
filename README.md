@@ -1,13 +1,5 @@
 ## ⭐️ Sponsor: Edit this README
 
-Under "SPONSORS ADD INFO HERE" heading below, include the following:
-
-- [ ] Under the "Scope" heading, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
----
-
 # zkSync v2 contest details
 - Total Prize Pool: $165,500 USDC
   - HM awards: $127,500 USDC
@@ -33,10 +25,9 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 *Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
 # Overview
+We are releasing mart contracts for [zkSync version 2.0](https://v2.zksync.io/) - a general-purpose zero knowledge rollup solution for Ethereum. For more information and fundamental concepts please refer to the documentation [here](https://v2-docs.zksync.io/dev/#fundamental-topics).
 
-We are releasing Layer 1 smart contracts for [zkSync version 2.0](https://v2.zksync.io/) - a general-purpose zero knowledge rollup solution for Ethereum. For more information and fundamental concepts please refer to the documentation [here](https://v2-docs.zksync.io/dev/#fundamental-topics).
-
-This repository contains Layer 1 (i.e. Ethereum mainnet) part of zkSync v2.0, a set of Solidity smart contracts that take care of governance, upgradability, L1 to L2 communication, etc. Detailed description of these smart contracts and their purpose can be found [here](https://matterlabs.notion.site/zkSync-2-0-smart-contracts-overview-fad227fac94241898417771e4a415f83).
+This repository contains Layer 1 (i.e. Ethereum mainnet) and some Layer 2 contracts of zkSync v2.0, a set of Solidity smart contracts that take care of governance, upgradability, L1 <-> L2 communication, bridging, allow listing etc. A detailed description of these smart contracts and their purpose can be found [here](https://matterlabs.notion.site/zkSync-2-0-smart-contracts-overview-fad227fac94241898417771e4a415f83).
 
 Please pay special attention to any issues allowing:
 - Unauthorized upgrade
@@ -85,8 +76,8 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| [ethereum/contracts/bridge/L1ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/L1ERC20Bridge.sol) | 288 | TODO |
-| [ethereum/contracts/bridge/L1EthBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/L1EthBridge.sol) | 246 | TODO |
+| [ethereum/contracts/bridge/L1ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/L1ERC20Bridge.sol) | 288 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| [ethereum/contracts/bridge/L1EthBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/L1EthBridge.sol) | 246 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
 | [ethereum/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/interfaces/IL1Bridge.sol) | 42 |  |
 | [ethereum/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/interfaces/IL2Bridge.sol) | 26 |  |
 
@@ -108,24 +99,21 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
 | Bridges |  |  |
-| zksync/contracts/bridge/L2ERC20Bridge.sol | TODO | TODO |
-| zksync/contracts/bridge/L2ETHBridge.sol | TODO | TODO |
-| zksync/contracts/bridge/L2StandardERC20.sol | TODO | TODO |
-| zksync/contracts/bridge/interfaces/IL1Bridge.sol | TODO |  |
-| zksync/contracts/bridge/interfaces/IL2Bridge.sol | TODO |  |
-| zksync/contracts/bridge/interfaces/IL2EthInitializable.sol | TODO |  |
-| zksync/contracts/bridge/interfaces/IL2StandardToken.sol | TODO |  |
+| [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2ERC20Bridge.sol) | 125 | TODO |
+| [zksync/contracts/bridge/L2ETHBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2ETHBridge.sol) | 87 | |
+| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2StandardERC20.sol) | 131 | TODO |
+| [zksync/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/interfaces/IL1Bridge.sol) | 14 |  |
+| [zksync/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/interfaces/IL2Bridge.sol) | 40 |  |
+| [zksync/contracts/bridge/interfaces/IL2EthInitializable.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/interfaces/IL2EthInitializable.sol) | 7 |  |
+| [zksync/contracts/bridge/interfaces/IL2StandardToken.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/interfaces/IL2StandardToken.sol) | 17 |  |
 | Other | | |
-| zksync/contracts/ExternalDecoder.sol | TODO | |
-| zksync/contracts/L2ContractHelper.sol | TODO | |
+| [zksync/contracts/ExternalDecoder.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/ExternalDecoder.sol) | 18 | |
+| [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/L2ContractHelper.sol) | 43 | |
 
 
 ## Out of scope
 
-**Tests and hardhat plugins?**
-*List any files/contracts that are out of scope for this audit.*
-
-**Please confirm or edit the following scoping details**
+- [ethereum/contracts/dev-contracts/test](https://github.com/code-423n4/2022-10-zksync/tree/contest-prepare/ethereum/contracts/dev-contracts/test)
 
 # Tests
 
@@ -135,18 +123,18 @@ All contracts are divided into `ethereum` and `zksync` subfolders, each of which
 
 Select the correct folder:
 
-```terminal
+```console
   cd ethereum
 ```
 
 Install dependencies:
 
-```terminal
+```console
   yarn
 ```
 
 Run tests:
-```terminal
+```console
   yarn test
 ```
 
@@ -154,17 +142,17 @@ Run tests:
 
 Select the correct folder:
 
-```terminal
+```console
   cd zksync
 ```
 
 Install dependencies:
 
-```terminal
+```console
   yarn
 ```
 
 Run tests:
-```terminal
+```console
   yarn test
 ```
