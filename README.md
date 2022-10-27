@@ -43,14 +43,9 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 | [ethereum/contracts/zksync/facets/Getters.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Getters.sol) | 188 | |
 | [ethereum/contracts/zksync/facets/Governance.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Governance.sol) | 110 | |
 | [ethereum/contracts/zksync/facets/Mailbox.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Mailbox.sol) | 232 | |
-| Verifier| | |
-| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Verifier.sol) | 237 | |
-| [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | 705 | |
 | Libraries | | |
 | [ethereum/contracts/zksync/libraries/Diamond.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/Diamond.sol) | 291 | |
 | [ethereum/contracts/zksync/libraries/Merkle.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/Merkle.sol) | 39 | |
-| [ethereum/contracts/zksync/libraries/PairingsBn254.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/PairingsBn254.sol) | 276 | |
-| [ethereum/contracts/zksync/libraries/TranscriptLib.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/TranscriptLib.sol) | 47 | |
 | [ethereum/contracts/zksync/libraries/PriorityQueue.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/PriorityQueue.sol) | 81 | |
 | Interfaces | | |
 | [ethereum/contracts/zksync/interfaces/IDiamondCut.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/interfaces/IDiamondCut.sol) | 36 |  |
@@ -101,15 +96,15 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 
 ## Out of scope
 
-- [ethereum/contracts/dev-contracts/test/*](https://github.com/code-423n4/2022-10-zksync/tree/contest-prepare/ethereum/contracts/dev-contracts/test)
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Verifier.sol) | 237 | |
+| [ethereum/contracts/zksync/libraries/PairingsBn254.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/PairingsBn254.sol) | 276 | |
+| [ethereum/contracts/zksync/libraries/TranscriptLib.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/TranscriptLib.sol) | 47 | |
+- | [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | 705 | |
+- | [ethereum/contracts/dev-contracts/test/*](https://github.com/code-423n4/2022-10-zksync/tree/contest-prepare/ethereum/contracts/dev-contracts/test) | | |
 
 # Tests
-
-All contracts are divided into `ethereum` and `zksync` subfolders, each of which contains a hardhat project with related contracts.
-
-## L1 contracts
-
-Select the correct folder:
 
 ```sh
   cd ethereum
@@ -126,27 +121,6 @@ Run tests:
 ```sh
   yarn test
 ```
-
-## L2 contracts
-
-Select the correct folder:
-
-```sh
-  cd zksync
-```
-
-Install dependencies:
-
-```sh
-  yarn
-```
-
-Run tests:
-
-```sh
-  yarn test
-```
-
 
 # Overview
 
@@ -182,19 +156,19 @@ Technically, the L1 smart contract acts as a connector between Ethereum (L1) and
 
 In addition to the L1 contract, there are important contracts in L2, they also can execute some logic. That L2 contracts are called system contracts, using L2 <-> L1 communication they can affect L1 and L2. L2 system contracts don't include in this audit scope, but they are mentioned in L1 contracts, specifically on `ExecutorFacet`. More details in [docs](https://v2-docs.zksync.io/dev/zksync-v2/system-contracts.html).
 
-##### DiamondProxy
+#### DiamondProxy
 
 The main contract uses [EIP-2535](https://eips.ethereum.org/EIPS/eip-2535) diamond proxy pattern. It is an in-house implementation that is inspired by the [mudgen reference implementation](https://github.com/mudgen/Diamond). It has no external functions, only the fallback that delegates a call to one of the facets (target/implementation contract). So even an upgrade system is a separate facet that can be replaced.
 
 One of the differences from reference implementation is access freezability. Each of the facets has an associated parameter, that indicates if it is possible to freeze the access to the facet. The privilege actor can freeze the **diamond** (not a specific facet!) and all facets with the marker `isFreezable` should be inaccessible until the governor unfreezes the diamond. Note, that's a very dangerous thing since the diamond proxy can freeze the upgrade system, then the diamond will be frozen forever.
 
-##### DiamondInit
+#### DiamondInit
 
 It is a one-function contract, that implements the logic of initialing diamond proxy. It is called only once on the diamond constructor and doesn't save in the diamond as a facet.
 
 Implementation detail - function return magic value just like it is designed in [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271), but the magic value is 32 bytes in size.
 
-##### DiamondCutFacet
+#### DiamondCutFacet
 
 These smart contracts manage the freezing/unfreezing and upgrades of the diamond proxy. That being said, the contract mustn't be frozen.
 
@@ -213,15 +187,15 @@ The upgrade itself characterizes by three variables:
 
 NOTE: `proposeDiamondCut` - commits data associated with an upgrade but does not execute it. While the upgrade is associated with `facetCuts` and `(address _initAddress, bytes _calldata)` the upgrade will be committed to the `facetCuts` and `_initAddress`. That's done on purpose, to let some freedom to the governor change calldata for the upgrade between proposing and executing it.
 
-##### GettersFacet
+#### GettersFacet
 
 Separate facet, whose only function is providing `view` and `pure` methods. It also implement [diamond loupe](https://eips.ethereum.org/EIPS/eip-2535#diamond-loupe) that made managing facets easier.
 
-##### GovernanceFacet
+#### GovernanceFacet
 
 Controlled the changes privilege address as governor and validators. Compact contract with a couple of functions, that only needed to change governor, validators or one of the parameters of the system (L2 bootloader bytecodehash, verifier address, verifier parameters, etc).
 
-##### MailboxFacet
+#### MailboxFacet
 
 The facet that handles L2 <-> L1 communication, an overview for which can be found in [docs](https://v2-docs.zksync.io/dev/zksync-v2/l1-l2-interop.html#l1-l2-communication).
 
@@ -240,7 +214,7 @@ From the L1 side, For each L2 block, Merkle root with such logs in leaves are ca
 - One of the system contract accepts a arbitrary length message and sends a fixed length message with parameters `senderAddress == this`, `marker == true`, `key == msg.sender`, `value == keccak256(message)`.
 - The contract on L1 accepts all sent messages and if the message came from this system contract it requires that the preimage of `value` be provided.
 
-##### ExecutorFacet
+#### ExecutorFacet
 
 A contract that accepts L2 blocks, enforces data availability and checks the validity of zk-proof.
 
@@ -250,3 +224,21 @@ The state transition is divided into three stages:
 - `proveBlocks` - validate zk-proof
 - `executeBlocks` - finalizing the state, marking L1 -> L2 communication processing, and saving Merkle tree with L2 logs.
 
+#### Bridges
+
+Bridges are completely separate contracts from the Diamond. They are a wrapper for L1 <-> L2 communication on contracts on both L1 and L2. The one counterpart lock funds and send the request to mint bridged assset on another side. The opposite, the user can burn funds on one side and unlock them on another.
+
+We propose two "default" bridge implementations for ERC20 tokens and ether. Please note, anyone can create a different bridge by the same proncipe, "default" implementation needes for the convenience to bridge any asset without developing a separate mechanism for bridging. 
+
+The ether bridges is special because it is the only place where native L2 ether can be minted. Other than that, it is just a smart contract without any special system preferences.
+
+##### L1Bridge
+
+- `deposit` - locks funds inside the contract and send request to mint bridged assets on L2
+- `claimFailedDeposit` - unlock funds if the deposit was initiated but then failed on L2
+- `finalizeWithdrawal` - unlock funds for the valid withdraw request from L2
+
+##### L2Bridge
+
+- `withdraw` - initiates a withdrawal by burning funds on the contract and sending the message to L1 
+- `finalizeDeposit` - finalize the deposit and mint funds on L2
