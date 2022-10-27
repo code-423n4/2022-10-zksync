@@ -164,6 +164,8 @@ One of the differences from the reference implementation is access freezability.
 
 It is a one-function contract, that implements the logic of initialing diamond proxy. It is called only once on the diamond constructor and is not saved in the diamond as a facet.
 
+Implementation detail - function returns a magic value just like it is designed in [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271), but the magic value is 32 bytes in size.
+
 #### DiamondCutFacet
 
 These smart contracts manage the freezing/unfreezing and upgrades of the diamond proxy. That being said, the contract must never be frozen.
