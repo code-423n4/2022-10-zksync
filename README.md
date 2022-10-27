@@ -49,37 +49,76 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 
 ## L1 contracts
 
+### zkSync
+
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| ethereum/contracts/zksync/Config.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/Storage.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/DiamondInit.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/DiamondProxy.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/Verifier.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/facets/Base.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/facets/DiamondCut.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/facets/Executor.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/facets/Getters.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/facets/Governance.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/facets/Mailbox.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/libraries/Diamond.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/libraries/Merkle.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/libraries/PairingsBn254.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/libraries/TranscriptLib.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/libraries/PriorityQueue.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/interfaces/IDiamondCut.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/interfaces/IExecutor.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/interfaces/IGetters.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/interfaces/IGovernance.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/interfaces/IMailbox.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| ethereum/contracts/zksync/interfaces/IZkSync.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| Diamond | | |
+| ethereum/contracts/zksync/DiamondProxy.sol | TODO | TODO |
+| ethereum/contracts/zksync/DiamondInit.sol | TODO | TODO |
+| ethereum/contracts/zksync/Config.sol | TODO | TODO |
+| ethereum/contracts/zksync/Storage.sol | TODO | TODO |
+| ethereum/contracts/zksync/facets/Base.sol | TODO | TODO |
+| ethereum/contracts/zksync/facets/DiamondCut.sol | TODO | TODO |
+| ethereum/contracts/zksync/facets/Executor.sol | TODO | TODO |
+| ethereum/contracts/zksync/facets/Getters.sol | TODO | TODO |
+| ethereum/contracts/zksync/facets/Governance.sol | TODO | TODO |
+| ethereum/contracts/zksync/facets/Mailbox.sol | TODO | TODO |
+| Verifier| | |
+| ethereum/contracts/zksync/Verifier.sol | TODO | TODO |
+| ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol | TODO | TODO |
+| Libraries | | |
+| ethereum/contracts/zksync/libraries/Diamond.sol | TODO | TODO |
+| ethereum/contracts/zksync/libraries/Merkle.sol | TODO | TODO |
+| ethereum/contracts/zksync/libraries/PairingsBn254.sol | TODO | TODO |
+| ethereum/contracts/zksync/libraries/TranscriptLib.sol | TODO | TODO |
+| ethereum/contracts/zksync/libraries/PriorityQueue.sol | TODO | TODO |
+| Interfaces | | |
+| ethereum/contracts/zksync/interfaces/IDiamondCut.sol | TODO |  |
+| ethereum/contracts/zksync/interfaces/IExecutor.sol | TODO |  |
+| ethereum/contracts/zksync/interfaces/IGetters.sol | TODO |  |
+| ethereum/contracts/zksync/interfaces/IGovernance.sol | TODO |  |
+| ethereum/contracts/zksync/interfaces/IMailbox.sol | TODO |  |
+| ethereum/contracts/zksync/interfaces/IZkSync.sol | TODO |  |
+
+### Bridges
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| ethereum/contracts/bridge/L1ERC20Bridge.sol | TODO | TODO |
+| ethereum/contracts/bridge/L1EthBridge.sol | TODO | TODO |
+| ethereum/contracts/bridge/interfaces/IL1Bridge.sol | TODO |  |
+| ethereum/contracts/bridge/interfaces/IL2Bridge.sol | TODO |  |
+
+### Other
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| ethereum/contracts/common/AllowList.sol | TODO |  |
+| ethereum/contracts/common/AllowListed.sol | TODO |  |
+| ethereum/contracts/common/L2ContractHelper.sol | TODO |  |
+| ethereum/contracts/common/ReentrancyGuard.sol | TODO |  |
+| ethereum/contracts/libraries/UncheckedMath.sol | TODO |  |
+| ethereum/contracts/libraries/UnsafeBytes.sol | TODO |  |
+| ethereum/contracts/interfaces/IAllowList.sol | TODO |  |
+
 
 ## L2 contracts
 
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| TODO | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| Bridges |  |  |
+| zksync/contracts/bridge/L2ERC20Bridge.sol | TODO | TODO |
+| zksync/contracts/bridge/L2ETHBridge.sol | TODO | TODO |
+| zksync/contracts/bridge/L2StandardERC20.sol | TODO | TODO |
+| zksync/contracts/bridge/interfaces/IL1Bridge.sol | TODO |  |
+| zksync/contracts/bridge/interfaces/IL2Bridge.sol | TODO |  |
+| zksync/contracts/bridge/interfaces/IL2EthInitializable.sol | TODO |  |
+| zksync/contracts/bridge/interfaces/IL2StandardToken.sol | TODO |  |
+| Other | | |
+| zksync/contracts/ExternalDecoder.sol | TODO | |
+| zksync/contracts/L2ContractHelper.sol | TODO | |
+
 
 ## Out of scope
 
