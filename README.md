@@ -203,9 +203,10 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 
 ## L2 contracts
 
+### Bridges
+
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| Bridges |  |  |
 | [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2ERC20Bridge.sol) | 125 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
 | [zksync/contracts/bridge/L2ETHBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2ETHBridge.sol) | 87 | |
 | [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2StandardERC20.sol) | 131 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
@@ -213,7 +214,11 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 | [zksync/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/interfaces/IL2Bridge.sol) | 40 |  |
 | [zksync/contracts/bridge/interfaces/IL2EthInitializable.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/interfaces/IL2EthInitializable.sol) | 7 |  |
 | [zksync/contracts/bridge/interfaces/IL2StandardToken.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/interfaces/IL2StandardToken.sol) | 17 |  |
-| Other | | |
+
+### Other
+
+| Contract | SLOC | Libraries used |
+| ----------- | ----------- | ----------- |
 | [zksync/contracts/ExternalDecoder.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/ExternalDecoder.sol) | 18 | |
 | [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/L2ContractHelper.sol) | 43 | |
 
