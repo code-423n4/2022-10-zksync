@@ -69,7 +69,7 @@ contract L1ERC20Bridge is IL1Bridge, AllowListed, ReentrancyGuard {
     /// @notice is necessary for determining L2 token address by L1 address, see `l2TokenAddress(address)` function
     /// @param _governor Address which can change L2 token implementation
     function initialize(
-        bytes[] memory _factoryDeps,
+        bytes[] calldata _factoryDeps,
         address _l2TokenFactory,
         address _governor
     ) external reentrancyGuardInitializer {

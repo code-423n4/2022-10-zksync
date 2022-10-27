@@ -17,17 +17,17 @@ describe('Priority queue tests', function () {
     describe('on empty queue', function () {
         it('getSize', async () => {
             const size = await priorityQueueTest.getSize();
-            expect(size).equal(0);
+            expect(size.eq(0)).equal(true);
         });
 
         it('getFirstUnprocessedPriorityTx', async () => {
             const firstUnprocessedTx = await priorityQueueTest.getFirstUnprocessedPriorityTx();
-            expect(firstUnprocessedTx).equal(0);
+            expect(firstUnprocessedTx.eq(0)).equal(true);
         });
 
         it('getTotalPriorityTxs', async () => {
             const totalPriorityTxs = await priorityQueueTest.getTotalPriorityTxs();
-            expect(totalPriorityTxs).equal(0);
+            expect(totalPriorityTxs.eq(0)).equal(true);
         });
 
         it('isEmpty', async () => {
@@ -61,23 +61,23 @@ describe('Priority queue tests', function () {
             const frontElement = await priorityQueueTest.front();
 
             expect(frontElement.canonicalTxHash).equal(queue[0].canonicalTxHash);
-            expect(frontElement.expirationBlock).equal(queue[0].expirationBlock);
-            expect(frontElement.layer2Tip).equal(queue[0].layer2Tip);
+            expect(frontElement.expirationBlock.eq(queue[0].expirationBlock)).equal(true);
+            expect(frontElement.layer2Tip.eq(queue[0].layer2Tip)).equal(true);
         });
 
         it('getSize', async () => {
             const size = await priorityQueueTest.getSize();
-            expect(size).equal(queue.length);
+            expect(size.eq(queue.length)).equal(true);
         });
 
         it('getFirstUnprocessedPriorityTx', async () => {
             const firstUnprocessedTx = await priorityQueueTest.getFirstUnprocessedPriorityTx();
-            expect(firstUnprocessedTx).equal(0);
+            expect(firstUnprocessedTx.eq(0)).equal(true);
         });
 
         it('getTotalPriorityTxs', async () => {
             const totalPriorityTxs = await priorityQueueTest.getTotalPriorityTxs();
-            expect(totalPriorityTxs).equal(queue.length);
+            expect(totalPriorityTxs.eq(queue.length)).equal(true);
         });
 
         it('isEmpty', async () => {
@@ -93,8 +93,8 @@ describe('Priority queue tests', function () {
             for (let i = 0; i < NUMBER_OPERATIONS; ++i) {
                 const frontElement = await priorityQueueTest.front();
                 expect(frontElement.canonicalTxHash).equal(queue[0].canonicalTxHash);
-                expect(frontElement.expirationBlock).equal(queue[0].expirationBlock);
-                expect(frontElement.layer2Tip).equal(queue[0].layer2Tip);
+                expect(frontElement.expirationBlock.eq(queue[0].expirationBlock)).equal(true);
+                expect(frontElement.layer2Tip.eq(queue[0].layer2Tip)).equal(true);
 
                 await priorityQueueTest.popFront();
                 queue.shift();
@@ -105,23 +105,23 @@ describe('Priority queue tests', function () {
             const frontElement = await priorityQueueTest.front();
 
             expect(frontElement.canonicalTxHash).equal(queue[0].canonicalTxHash);
-            expect(frontElement.expirationBlock).equal(queue[0].expirationBlock);
-            expect(frontElement.layer2Tip).equal(queue[0].layer2Tip);
+            expect(frontElement.expirationBlock.eq(queue[0].expirationBlock)).equal(true);
+            expect(frontElement.layer2Tip.eq(queue[0].layer2Tip)).equal(true);
         });
 
         it('getSize', async () => {
             const size = await priorityQueueTest.getSize();
-            expect(size).equal(queue.length);
+            expect(size.eq(queue.length)).equal(true);
         });
 
         it('getFirstUnprocessedPriorityTx', async () => {
             const firstUnprocessedTx = await priorityQueueTest.getFirstUnprocessedPriorityTx();
-            expect(firstUnprocessedTx).equal(NUMBER_OPERATIONS);
+            expect(firstUnprocessedTx.eq(NUMBER_OPERATIONS)).equal(true);
         });
 
         it('getTotalPriorityTxs', async () => {
             const totalPriorityTxs = await priorityQueueTest.getTotalPriorityTxs();
-            expect(totalPriorityTxs).equal(queue.length + NUMBER_OPERATIONS);
+            expect(totalPriorityTxs.eq(queue.length + NUMBER_OPERATIONS)).equal(true);
         });
 
         it('isEmpty', async () => {

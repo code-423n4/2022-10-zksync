@@ -70,6 +70,45 @@ describe('Allow list tests', function () {
             it('Successfully remove the permission', async () => {
                 await allowList.setPermissionToCall(await owner.getAddress(), target, funcSig, false);
             });
+
+            it('non-owner failed to set batch permission to call', async () => {
+                let ownerAddress = await owner.getAddress();
+                const revertReason = await getCallRevertReason(
+                    allowList
+                        .connect(randomSigner)
+                        .setBatchPermissionToCall(
+                            [ownerAddress, ownerAddress],
+                            [target, target],
+                            [funcSig, funcSig],
+                            [true, true]
+                        )
+                );
+                expect(revertReason).equal('kx');
+            });
+
+            it('Owner successfully set batch permission to call', async () => {
+                let ownerAddress = await owner.getAddress();
+                await allowList.setBatchPermissionToCall(
+                    [ownerAddress, ownerAddress],
+                    [target, target],
+                    [funcSig, funcSig],
+                    [true, true]
+                );
+            });
+
+            it('Revert on different length in setting batch permission to call', async () => {
+                let ownerAddress = await owner.getAddress();
+
+                const revertReason = await getCallRevertReason(
+                    allowList.setBatchPermissionToCall(
+                        [ownerAddress],
+                        [target, target],
+                        [funcSig, funcSig],
+                        [true, true]
+                    )
+                );
+                expect(revertReason).equal('yw');
+            });
         });
     });
 
@@ -77,7 +116,7 @@ describe('Allow list tests', function () {
         const target = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045';
         const funcSig = '0xdeadbeaf';
 
-        it('non-owner failed to set permission to call', async () => {
+        it('non-owner failed to set public access', async () => {
             const revertReason = await getCallRevertReason(
                 allowList.connect(randomSigner).setPublicAccess(target, true)
             );
@@ -99,11 +138,11 @@ describe('Allow list tests', function () {
             expect(canCall).equal(false);
         });
 
-        it('Owner successfully set permission to call', async () => {
+        it('Owner successfully set public access', async () => {
             await allowList.setPublicAccess(target, true);
         });
 
-        it('Successfully set the same permission twice', async () => {
+        it('Successfully set the same public access twice', async () => {
             await allowList.setPublicAccess(target, true);
         });
 
@@ -122,8 +161,24 @@ describe('Allow list tests', function () {
             expect(canCall).equal(true);
         });
 
-        it('Successfully remove the permission', async () => {
+        it('Successfully remove the public access', async () => {
             await allowList.setPublicAccess(target, false);
+        });
+
+        it('non-owner failed to set batch public access', async () => {
+            const revertReason = await getCallRevertReason(
+                allowList.connect(randomSigner).setBatchPublicAccess([target, target], [true, true])
+            );
+            expect(revertReason).equal('kx');
+        });
+
+        it('Owner successfully set batch public access', async () => {
+            await allowList.setBatchPublicAccess([target, target], [true, true]);
+        });
+
+        it('Revert on different length in setting batch public access', async () => {
+            const revertReason = await getCallRevertReason(allowList.setBatchPublicAccess([target], [true, true]));
+            expect(revertReason).equal('yg');
         });
     });
 
