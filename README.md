@@ -23,10 +23,10 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ## C4udit / Publicly Known Issues
 
-1. Merke library ([Merkle.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/contracts/ethereum/contracts/zksync/libraries/Merkle.sol)) does not checkt that \_path length is equal to the tree height.
-2. [UPGRADE\_NOTICE\_PERIOD](https://github.com/code-423n4/2022-10-zksync/blob/main/contracts/ethereum/hardhat.config.ts#L9) is set to 0 during alpha.
+1. Merke library ([Merkle.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/libraries/Merkle.sol)) does not checkt that \_path length is equal to the tree height.
+2. [UPGRADE\_NOTICE\_PERIOD](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L9) is set to 0 during alpha.
 3. `supportsInterface` of `ERC-165` standard is not implemented.
-4. Solidity version is not pinned in the source files. It is pinned in the [config](https://github.com/code-423n4/2022-10-zksync/blob/main/contracts/ethereum/hardhat.config.ts#L82) instead.
+4. Solidity version is not pinned in the source files. It is pinned in the [config](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L82) instead.
 
 The C4audit output for the contest can be found here, [include link to C4udit report], within an hour of contest opening.
 
@@ -47,11 +47,39 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 
 # Scope
 
-**Waiting for the code to finalize**
+## L1 contracts
 
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| contracts/folder/sample.sol | 123 | This contract does XYZ | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| ethereum/contracts/zksync/Config.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/Storage.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/DiamondInit.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/DiamondProxy.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/Verifier.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/facets/Base.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/facets/DiamondCut.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/facets/Executor.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/facets/Getters.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/facets/Governance.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/facets/Mailbox.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/libraries/Diamond.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/libraries/Merkle.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/libraries/PairingsBn254.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/libraries/TranscriptLib.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/libraries/PriorityQueue.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/interfaces/IDiamondCut.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/interfaces/IExecutor.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/interfaces/IGetters.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/interfaces/IGovernance.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/interfaces/IMailbox.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| ethereum/contracts/zksync/interfaces/IZkSync.sol | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+
+## L2 contracts
+
+| Contract | SLOC | Libraries used |  
+| ----------- | ----------- | ----------- |
+| TODO | TODO | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
 
 ## Out of scope
 
