@@ -1,6 +1,8 @@
 import '@nomiclabs/hardhat-solpp';
 import '@matterlabs/hardhat-zksync-solc';
+import "hardhat-gas-reporter";
 import 'hardhat-typechain';
+import "solidity-coverage";
 
 export default {
     zksolc: {

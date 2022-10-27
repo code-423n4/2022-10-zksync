@@ -1,6 +1,8 @@
 import '@nomiclabs/hardhat-solpp';
 import '@nomiclabs/hardhat-ethers';
+import "hardhat-gas-reporter";
 import 'hardhat-typechain';
+import "solidity-coverage";
 
 const prodConfig = {
     UPGRADE_NOTICE_PERIOD: 0,
