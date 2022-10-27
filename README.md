@@ -14,9 +14,9 @@
 ## C4udit / Publicly Known Issues
 
 1. Merke library ([Merkle.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/libraries/Merkle.sol)) does not check that *\_path* length is equal to the tree height.
-2. [UPGRADE\_NOTICE\_PERIOD](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L9) is set to 0 during alpha.
+2. [UPGRADE\_NOTICE\_PERIOD](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L6) is set to 0 during alpha.
 3. `supportsInterface` of `ERC-165` standard is not implemented.
-4. Solidity version is not pinned in the source files. It is pinned in the [config](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L24) instead.
+4. Solidity version is not pinned in the source files. It is pinned in the [config](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L21) instead.
 5. Implementation of the Diamond Cut is not fully EIP-2535 compatible, because of missing check for that replaced facet is distinct from old one.
 6. `unfreezeDiamond`/`emergencyFreezeDiamond`/`cancelDiamondCutProposal` are susceptible to reorg attack.
 
@@ -35,7 +35,7 @@ Although the audit is focused on the L1 part, a few notes to have a wider pictur
 - There is a standard way to pass messages between L1 and L2. That is a part of the protocol.
 - There is no escape hatch mechanism yet, but it is planned to have one.
 
-More can be read in the [documentation](https://v2-docs.zksync.io/dev/rollups.html).
+More can be read in the [documentation](https://v2-docs.zksync.io/dev/fundamentals/rollups.html).
 
 ## Glossary
 
@@ -56,7 +56,7 @@ Besides that, all data that is needed to restore the L2 state are also pushed on
 
 Technically, the L1 smart contract acts as a connector between Ethereum (L1) and zkSync (L2). It is this that checks the validity proof and data availability, handles L2 <-> L1 communication, finalizes L2 state transition, etc.
 
-In addition to the L1 contract, there are important contracts in L2, they also can execute some logic. These L2 contracts are called system contracts, using L2 <-> L1 communication they can affect L1 and L2. L2 system contracts are not included in the scope of this audit, but they are mentioned in L1 contracts, specifically on `ExecutorFacet`. More details in [docs](https://v2-docs.zksync.io/dev/zksync-v2/system-contracts.html).
+In addition to the L1 contract, there are important contracts in L2, they also can execute some logic. These L2 contracts are called system contracts, using L2 <-> L1 communication they can affect L1 and L2. L2 system contracts are not included in the scope of this audit, but they are mentioned in L1 contracts, specifically on `ExecutorFacet`. More details in [docs](https://v2-docs.zksync.io/dev/developer-guides/contracts/system-contracts.html).
 
 #### DiamondProxy
 
@@ -99,7 +99,7 @@ Controls changing of the privileged addresses such as governor and validators. C
 
 #### MailboxFacet
 
-The facet that handles L2 <-> L1 communication, an overview for which can be found in [docs](https://v2-docs.zksync.io/dev/zksync-v2/l1-l2-interop.html#l1-l2-communication).
+The facet that handles L2 <-> L1 communication, an overview for which can be found in [docs](https://v2-docs.zksync.io/dev/developer-guides/bridging/l1-l2-interop.html).
 
 The Mailbox only cares about transferring information from L2 to L1 and the other way, but does not hold or transfer any assets (ETH, ERC20 tokens, or NFTs).
 
@@ -234,14 +234,14 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 
 # Additional Context
 
-## Scoping Details 
+## Scoping Details
 ```
 - If you have a public code repo, please share it here: N/A
-- How many contracts are in scope?: 35   
+- How many contracts are in scope?: 35
 - Total SLoC for these contracts?: 2,281
 - How many external imports are there?: 1
 - How many separate interfaces and struct definitions are there for the contracts within scope?:  34
-- Does most of your code generally use composition or inheritance?: Yes 
+- Does most of your code generally use composition or inheritance?: Yes
 - How many external calls?: 0
 - What is the overall line coverage percentage provided by your tests?:  Not sure.
 - Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: Yes
