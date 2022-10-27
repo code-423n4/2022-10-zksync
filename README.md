@@ -15,12 +15,12 @@
 
 ## C4udit / Publicly Known Issues
 
-1. Merke library ([Merkle.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/libraries/Merkle.sol)) does not checkt that \_path length is equal to the tree height.
+1. Merke library ([Merkle.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/libraries/Merkle.sol)) does not check that \_path length is equal to the tree height.
 2. [UPGRADE\_NOTICE\_PERIOD](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L9) is set to 0 during alpha.
 3. `supportsInterface` of `ERC-165` standard is not implemented.
 4. Solidity version is not pinned in the source files. It is pinned in the [config](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L82) instead.
 
-The C4audit output for the contest can be found here, [include link to C4udit report], within an hour of contest opening.
+The C4udit output for the contest can be found here, [include link to C4udit report], within an hour of contest opening.
 
 *Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
@@ -162,9 +162,9 @@ One of the differences from reference implementation is access freezability. Eac
 
 #### DiamondInit
 
-It is a one-function contract, that implements the logic of initialing diamond proxy. It is called only once on the diamond constructor and doesn't save in the diamond as a facet.
+It is a one-function contract, that implements the logic of initialing diamond proxy. It is called only once on the diamond constructor and is not saved in the diamond as a facet.
 
-Implementation detail - function return magic value just like it is designed in [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271), but the magic value is 32 bytes in size.
+Implementation detail - function returns magic value just like it is designed in [EIP-1271](https://eips.ethereum.org/EIPS/eip-1271), but the magic value is 32 bytes in size.
 
 #### DiamondCutFacet
 
@@ -183,23 +183,23 @@ The upgrade itself characterizes by three variables:
 - `facetCuts` - a set of changes to the facets (adding new facets, removing facets, and replacing them).
 - pair `(address _initAddress, bytes _calldata)` for initializing the upgrade by making a delegate call to `_initAddress` with `_calldata` inputs.
 
-NOTE: `proposeDiamondCut` - commits data associated with an upgrade but does not execute it. While the upgrade is associated with `facetCuts` and `(address _initAddress, bytes _calldata)` the upgrade will be committed to the `facetCuts` and `_initAddress`. That's done on purpose, to let some freedom to the governor change calldata for the upgrade between proposing and executing it.
+NOTE: `proposeDiamondCut` - commits data associated with an upgrade but does not execute it. While the upgrade is associated with `facetCuts` and `(address _initAddress, bytes _calldata)` the upgrade will be committed to the `facetCuts` and `_initAddress`. That's done on purpose, to let some freedom to the governor to change calldata for the upgrade between proposing and executing it.
 
 #### GettersFacet
 
-Separate facet, whose only function is providing `view` and `pure` methods. It also implement [diamond loupe](https://eips.ethereum.org/EIPS/eip-2535#diamond-loupe) that made managing facets easier.
+Separate facet, whose only function is providing `view` and `pure` methods. It also implements [diamond loupe](https://eips.ethereum.org/EIPS/eip-2535#diamond-loupe) that made managing facets easier.
 
 #### GovernanceFacet
 
-Controlled the changes privilege address as governor and validators. Compact contract with a couple of functions, that only needed to change governor, validators or one of the parameters of the system (L2 bootloader bytecodehash, verifier address, verifier parameters, etc).
+Controls the changes of privilege addresses as governor and validators. Compact contract with a couple of functions, that is only needed to change governor, validators or one of the parameters of the system (L2 bootloader bytecodehash, verifier address, verifier parameters, etc).
 
 #### MailboxFacet
 
 The facet that handles L2 <-> L1 communication, an overview for which can be found in [docs](https://v2-docs.zksync.io/dev/zksync-v2/l1-l2-interop.html#l1-l2-communication).
 
-The Mailbox care only about transferring information from L2 to L1 and the opposite, but doesn't hold and transfer any funds (ether, ERC20 tokens, or NFTs).
+The Mailbox cares only about transferring information from L2 to L1 and the opposite, but doesn't hold and transfer any funds (ether, ERC20 tokens, or NFTs).
 
-L1 -> L2 communication implemented as requesting L2 transaction on L1 and executing in on L2. That means user can call the function on L1 contract to save data about transaction in some queue. Later on, a validator can process such transactions on L2 and mark them as processed on the L1 priority queue. Currently, that is used only for sending information from L1 to L2 or implementing a multi-layer protocol. But it is planned to use a priority queue for the censor-resistance mechanism. Relevant functions for L1 -> L2 communication: `requestL2Transaction`/`l2TransactionBaseCost`/`serializeL2Transaction`.
+L1 -> L2 communication is implemented as requesting L2 transaction on L1 and executing on L2. That means user can call the function on L1 contract to save data about transaction in some queue. Later on, a validator can process such transactions on L2 and mark them as processed on the L1 priority queue. Currently, that is used only for sending information from L1 to L2 or implementing a multi-layer protocol. But it is planned to use a priority queue for the censor-resistance mechanism. Relevant functions for L1 -> L2 communication: `requestL2Transaction`/`l2TransactionBaseCost`/`serializeL2Transaction`.
 
 L2 -> L1 communication, in contrast to L1 -> L2 communication, is based only on transferring the information, and not on the transaction execution on L1.
 
@@ -207,9 +207,9 @@ From the L2 side, there is a special zkEVM opcode that saves `l2ToL1Log` in the 
 
 From the L1 side, For each L2 block, Merkle root with such logs in leaves are calculated. Thus, a user can provide Merkle proof for each `l2ToL1Logs`.
 
-*NOTE*: The `l2ToL1Log` structure consists of fixed size fields! Because of this, it is inconvenient to send a lot of data from L2 and prove that they were sent on L1 using only `l2ToL1log`. To send a variable length message we use this trick:
+*NOTE*: The `l2ToL1Log` structure consists of fixed size fields! Because of this, it is inconvenient to send a lot of data from L2 and to prove that they were sent on L1 using only `l2ToL1log`. To send a variable length message we use this trick:
 
-- One of the system contract accepts a arbitrary length message and sends a fixed length message with parameters `senderAddress == this`, `marker == true`, `key == msg.sender`, `value == keccak256(message)`.
+- One of the system contract accepts an arbitrary length message and sends a fixed length message with parameters `senderAddress == this`, `marker == true`, `key == msg.sender`, `value == keccak256(message)`.
 - The contract on L1 accepts all sent messages and if the message came from this system contract it requires that the preimage of `value` be provided.
 
 #### ExecutorFacet
@@ -218,28 +218,28 @@ A contract that accepts L2 blocks, enforces data availability and checks the val
 
 The state transition is divided into three stages:
 
-- `commitBlocks` - check L2 block timestamp, save data for a block, prepare data for zk-proof
-- `proveBlocks` - validate zk-proof
-- `executeBlocks` - finalizing the state, marking L1 -> L2 communication processing, and saving Merkle tree with L2 logs.
+- `commitBlocks` - checks L2 block timestamp, saves data for a block, and prepares data for zk-proof
+- `proveBlocks` - validates zk-proof
+- `executeBlocks` - finalizes the state, marks L1 -> L2 communication processing, and saves Merkle tree with L2 logs.
 
 #### Bridges
 
-Bridges are completely separate contracts from the Diamond. They are a wrapper for L1 <-> L2 communication on contracts on both L1 and L2. The one counterpart lock funds and send the request to mint bridged assset on another side. The opposite, the user can burn funds on one side and unlock them on another.
+Bridges are completely separate contracts from the Diamond. They are a wrapper for L1 <-> L2 communication on contracts on both L1 and L2. The one counterpart locks funds and sends the request to mint bridged assset on another side. The opposite, the user can burn funds on one side and unlock them on another.
 
-We propose two "default" bridge implementations for ERC20 tokens and ether. Please note, anyone can create a different bridge by the same proncipe, "default" implementation needes for the convenience to bridge any asset without developing a separate mechanism for bridging. 
+We propose two "default" bridge implementations for ERC20 tokens and ether. Please note, anyone can create a different bridge by the same principle, "default" implementation needes for the convenience to bridge any asset without developing a separate mechanism for bridging. 
 
-The ether bridges is special because it is the only place where native L2 ether can be minted. Other than that, it is just a smart contract without any special system preferences.
+The ether bridge is special because it is the only place where native L2 ether can be minted. Other than that, it is just a smart contract without any special system preferences.
 
 ##### L1Bridge
 
-- `deposit` - locks funds inside the contract and send request to mint bridged assets on L2
-- `claimFailedDeposit` - unlock funds if the deposit was initiated but then failed on L2
-- `finalizeWithdrawal` - unlock funds for the valid withdraw request from L2
+- `deposit` - locks funds inside the contract and sends request to mint bridged assets on L2
+- `claimFailedDeposit` - unlocks funds if the deposit was initiated but then failed on L2
+- `finalizeWithdrawal` - unlocks funds for the valid withdraw request from L2
 
 ##### L2Bridge
 
 - `withdraw` - initiates a withdrawal by burning funds on the contract and sending the message to L1 
-- `finalizeDeposit` - finalize the deposit and mint funds on L2
+- `finalizeDeposit` - finalizes the deposit and mints funds on L2
 
 #### Allowlist
 
