@@ -99,9 +99,9 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
 | Bridges |  |  |
-| [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2ERC20Bridge.sol) | 125 | TODO |
+| [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2ERC20Bridge.sol) | 125 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
 | [zksync/contracts/bridge/L2ETHBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2ETHBridge.sol) | 87 | |
-| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2StandardERC20.sol) | 131 | TODO |
+| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/L2StandardERC20.sol) | 131 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
 | [zksync/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/interfaces/IL1Bridge.sol) | 14 |  |
 | [zksync/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/interfaces/IL2Bridge.sol) | 40 |  |
 | [zksync/contracts/bridge/interfaces/IL2EthInitializable.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/bridge/interfaces/IL2EthInitializable.sol) | 7 |  |
@@ -113,7 +113,7 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 
 ## Out of scope
 
-- [ethereum/contracts/dev-contracts/test](https://github.com/code-423n4/2022-10-zksync/tree/contest-prepare/ethereum/contracts/dev-contracts/test)
+- [ethereum/contracts/dev-contracts/test/*](https://github.com/code-423n4/2022-10-zksync/tree/contest-prepare/ethereum/contracts/dev-contracts/test)
 
 # Tests
 
