@@ -54,10 +54,10 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
 | Diamond | | |
-| ethereum/contracts/zksync/DiamondProxy.sol | TODO | TODO |
-| ethereum/contracts/zksync/DiamondInit.sol | TODO | TODO |
-| ethereum/contracts/zksync/Config.sol | TODO | TODO |
-| ethereum/contracts/zksync/Storage.sol | TODO | TODO |
+| [ethereum/contracts/zksync/DiamondProxy.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/DiamondProxy.sol) | TODO |  |
+| [ethereum/contracts/zksync/DiamondInit.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/DiamondInit.sol) | TODO |  |
+| [ethereum/contracts/zksync/Config.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Config.sol) | TODO | TODO |
+| [ethereum/contracts/zksync/Storage.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Storage.sol) | TODO | TODO |
 | ethereum/contracts/zksync/facets/Base.sol | TODO | TODO |
 | ethereum/contracts/zksync/facets/DiamondCut.sol | TODO | TODO |
 | ethereum/contracts/zksync/facets/Executor.sol | TODO | TODO |
@@ -65,8 +65,8 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 | ethereum/contracts/zksync/facets/Governance.sol | TODO | TODO |
 | ethereum/contracts/zksync/facets/Mailbox.sol | TODO | TODO |
 | Verifier| | |
-| ethereum/contracts/zksync/Verifier.sol | TODO | TODO |
-| ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol | TODO | TODO |
+| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Verifier.sol) | TODO | TODO |
+| [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | TODO | TODO |
 | Libraries | | |
 | ethereum/contracts/zksync/libraries/Diamond.sol | TODO | TODO |
 | ethereum/contracts/zksync/libraries/Merkle.sol | TODO | TODO |
