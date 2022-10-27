@@ -30,7 +30,7 @@ async function expectReadValues(contract: UnsafeBytesTest, types: string[], valu
                 break;
             }
         }
-        expect(ethers.BigNumber.from(readValue)).equal(ethers.BigNumber.from(values[i]));
+        expect(ethers.BigNumber.from(readValue).eq(ethers.BigNumber.from(values[i]))).equal(true);
     }
 }
 

@@ -98,7 +98,7 @@ The C4udit output for the contest can be found here, [include link to C4udit rep
 | [ethereum/contracts/zksync/libraries/PairingsBn254.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/libraries/PairingsBn254.sol) | 276 | |
 | [ethereum/contracts/zksync/libraries/TranscriptLib.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/libraries/TranscriptLib.sol) | 47 | |
 | [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | 705 | |
-| [ethereum/contracts/dev-contracts/test/*](https://github.com/code-423n4/2022-10-zksync/tree/main/ethereum/contracts/dev-contracts/test) | | |
+| [ethereum/contracts/dev-contracts/*](https://github.com/code-423n4/2022-10-zksync/tree/main/ethereum/contracts/dev-contracts) | | |
 
 # Tests
 

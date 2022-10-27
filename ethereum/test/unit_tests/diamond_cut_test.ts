@@ -193,12 +193,17 @@ describe('Diamond proxy tests', function () {
 
     describe('initialization', function () {
         let revertFallbackAddress;
+        let returnSomethingAddress;
         let EOA_Address;
 
         before(async () => {
-            const contractFactory = await hardhat.ethers.getContractFactory('RevertFallback');
-            const contract = await contractFactory.deploy();
-            revertFallbackAddress = contract.address;
+            const contractFactoryRevertFallback = await hardhat.ethers.getContractFactory('RevertFallback');
+            const contractRevertFallback = await contractFactoryRevertFallback.deploy();
+            revertFallbackAddress = contractRevertFallback.address;
+
+            const contractFactoryReturnSomething = await hardhat.ethers.getContractFactory('ReturnSomething');
+            const contractReturnSomething = await contractFactoryReturnSomething.deploy();
+            returnSomethingAddress = contractReturnSomething.address;
 
             const [signer] = await hardhat.ethers.getSigners();
             EOA_Address = signer.address;
@@ -214,6 +219,18 @@ describe('Diamond proxy tests', function () {
             const diamondCutData = diamondCut([], EOA_Address, '0x');
             const revertReason = await getCallRevertReason(diamondCutTest.diamondCut(diamondCutData));
             expect(revertReason).equal('lp');
+        });
+
+        it('should revert on initializing diamondCut with zero-address and nonzero-data', async () => {
+            const diamondCutData = diamondCut([], ethers.constants.AddressZero, '0x11');
+            const revertReason = await getCallRevertReason(diamondCutTest.diamondCut(diamondCutData));
+            expect(revertReason).equal('H');
+        });
+
+        it('should revert on delegatecall to a contract with wrong return', async () => {
+            const diamondCutData = diamondCut([], returnSomethingAddress, '0x');
+            const revertReason = await getCallRevertReason(diamondCutTest.diamondCut(diamondCutData));
+            expect(revertReason).equal('lp1');
         });
     });
 
@@ -394,6 +411,30 @@ describe('Diamond proxy tests', function () {
                 expect(addr).equal(gettersFacetToUpgrade.address);
                 expect(isFreezable).equal(true);
             }
+        });
+
+        it('should revert on executing a proposal two times', async () => {
+            const proxyAsDiamondCut = DiamondCutFacetFactory.connect(proxy.address, governor);
+            const gettersFacetFactory = await hardhat.ethers.getContractFactory('GettersFacet');
+            const gettersFacetContract = await gettersFacetFactory.deploy();
+            const gettersFacetToUpgrade = GettersFacetFactory.connect(
+                gettersFacetContract.address,
+                gettersFacetContract.signer
+            );
+
+            const facetCuts = [
+                facetCut(gettersFacetToUpgrade.address, gettersFacetToUpgrade.interface, Action.Replace, true)
+            ];
+
+            await proxyAsDiamondCut.proposeDiamondCut(facetCuts, ethers.constants.AddressZero);
+            await proxyAsDiamondCut.executeDiamondCutProposal(
+                diamondCut(facetCuts, ethers.constants.AddressZero, '0x')
+            );
+
+            const secondFacetCutExecutionRevertReason = await getCallRevertReason(
+                proxyAsDiamondCut.executeDiamondCutProposal(diamondCut(facetCuts, ethers.constants.AddressZero, '0x'))
+            );
+            expect(secondFacetCutExecutionRevertReason).equal('a4');
         });
     });
 });

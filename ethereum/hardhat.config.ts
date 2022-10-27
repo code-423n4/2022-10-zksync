@@ -1,9 +1,6 @@
-import '@nomiclabs/hardhat-waffle';
 import '@nomiclabs/hardhat-solpp';
 import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-etherscan';
 import 'hardhat-typechain';
-import 'hardhat-contract-sizer';
 
 const prodConfig = {
     UPGRADE_NOTICE_PERIOD: 0,

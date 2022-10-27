@@ -173,4 +173,9 @@ describe('Diamond proxy tests', function () {
         const revertReason = await getCallRevertReason(proxy.fallback({ data: mailboxFacetSelector0 }));
         expect(revertReason).equal('q1');
     });
+
+    it('should be able to call an unfreezable faucet when diamondStorage is frozen', async () => {
+        const gettersFacetSelector1 = getAllSelectors(gettersFacet.interface)[1];
+        await proxy.fallback({ data: gettersFacetSelector1 });
+    });
 });
