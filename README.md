@@ -184,8 +184,8 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| [ethereum/contracts/bridge/L1ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/bridge/L1ERC20Bridge.sol) | 288 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
-| [ethereum/contracts/bridge/L1EthBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/bridge/L1EthBridge.sol) | 246 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| [ethereum/contracts/bridge/L1ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/bridge/L1ERC20Bridge.sol) | 288 | [`@openzeppelin/*`](<(https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts)>) |
+| [ethereum/contracts/bridge/L1EthBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/bridge/L1EthBridge.sol) | 246 | [`@openzeppelin/*`](<(https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts)>) |
 | [ethereum/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/bridge/interfaces/IL1Bridge.sol) | 42 |  |
 | [ethereum/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/bridge/interfaces/IL2Bridge.sol) | 26 |  |
 
@@ -207,9 +207,9 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2ERC20Bridge.sol) | 125 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| [zksync/contracts/bridge/L2ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2ERC20Bridge.sol) | 125 | [`@openzeppelin/*`](<(https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts)>) |
 | [zksync/contracts/bridge/L2ETHBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2ETHBridge.sol) | 87 | |
-| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2StandardERC20.sol) | 131 | [`@openzeppelin/*`](<(https://openzeppelin.com/contracts/)>) |
+| [zksync/contracts/bridge/L2StandardERC20.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/L2StandardERC20.sol) | 131 | [`@openzeppelin/*`](<(https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts)>) |
 | [zksync/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/interfaces/IL1Bridge.sol) | 14 |  |
 | [zksync/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/interfaces/IL2Bridge.sol) | 40 |  |
 | [zksync/contracts/bridge/interfaces/IL2EthInitializable.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/zksync/contracts/bridge/interfaces/IL2EthInitializable.sol) | 7 |  |
@@ -259,6 +259,14 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 ```
 
 # Tests
+
+## One liner
+
+```sh
+rm -Rf 2022-10-zksync || true && git clone https://github.com/code-423n4/2022-10-zksync.git && cd 2022-10-zksync/ethereum && nvm use 18.0 && yarn --ignore-engines && REPORT_GAS=true yarn test
+```
+
+## Step by step
 
 ```sh
   cd ethereum
