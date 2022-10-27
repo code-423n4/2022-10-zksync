@@ -76,7 +76,6 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 | [ethereum/contracts/libraries/UnsafeBytes.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/libraries/UnsafeBytes.sol) | 45 |  |
 | [ethereum/contracts/interfaces/IAllowList.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/interfaces/IAllowList.sol) | 70 |  |
 
-
 ## L2 contracts
 
 | Contract | SLOC | Libraries used |  
@@ -93,7 +92,6 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 | [zksync/contracts/ExternalDecoder.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/ExternalDecoder.sol) | 18 | |
 | [zksync/contracts/L2ContractHelper.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/zksync/contracts/L2ContractHelper.sol) | 43 | |
 
-
 ## Out of scope
 
 | Contract | SLOC | Libraries used |  
@@ -101,8 +99,8 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 | [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Verifier.sol) | 237 | |
 | [ethereum/contracts/zksync/libraries/PairingsBn254.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/PairingsBn254.sol) | 276 | |
 | [ethereum/contracts/zksync/libraries/TranscriptLib.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/TranscriptLib.sol) | 47 | |
-- | [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | 705 | |
-- | [ethereum/contracts/dev-contracts/test/*](https://github.com/code-423n4/2022-10-zksync/tree/contest-prepare/ethereum/contracts/dev-contracts/test) | | |
+| [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | 705 | |
+| [ethereum/contracts/dev-contracts/test/*](https://github.com/code-423n4/2022-10-zksync/tree/contest-prepare/ethereum/contracts/dev-contracts/test) | | |
 
 # Tests
 
@@ -242,3 +240,7 @@ The ether bridges is special because it is the only place where native L2 ether 
 
 - `withdraw` - initiates a withdrawal by burning funds on the contract and sending the message to L1 
 - `finalizeDeposit` - finalize the deposit and mint funds on L2
+
+#### Allowlist
+
+Auxiliary contact that controls the permission access list. It is used in bridges and diamond proxy to control which addresses can interact with them in Alpha release. 
