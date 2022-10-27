@@ -232,6 +232,32 @@ Auxiliary contract that controls the permission access list. It is used in bridg
 | [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | 705 | |
 | [ethereum/contracts/dev-contracts/*](https://github.com/code-423n4/2022-10-zksync/tree/main/ethereum/contracts/dev-contracts) | | |
 
+# Additional Context
+
+## Scoping Details 
+```
+- If you have a public code repo, please share it here: N/A
+- How many contracts are in scope?: 35   
+- Total SLoC for these contracts?: 2,281
+- How many external imports are there?: 1
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  34
+- Does most of your code generally use composition or inheritance?: Yes 
+- How many external calls?: 0
+- What is the overall line coverage percentage provided by your tests?:  Not sure.
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: Yes
+- Please describe required context: Zero knowledge rollups
+- Does it use an oracle?: No
+- Does the token conform to the ERC20 standard?: No token
+- Are there any novel or unique curve logic or mathematical models?: Not in L1
+- Does it use a timelock function?: Yes
+- Is it an NFT?: No
+- Does it have an AMM?: No
+- Is it a fork of a popular project?: No
+- Does it use rollups?: Yes
+- Is it multi-chain?:  No
+- Does it use a side-chain?: No
+```
+
 # Tests
 
 ```sh
