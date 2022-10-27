@@ -54,53 +54,53 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
 | Diamond | | |
-| [ethereum/contracts/zksync/DiamondProxy.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/DiamondProxy.sol) | TODO |  |
-| [ethereum/contracts/zksync/DiamondInit.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/DiamondInit.sol) | TODO |  |
-| [ethereum/contracts/zksync/Config.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Config.sol) | TODO | TODO |
-| [ethereum/contracts/zksync/Storage.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Storage.sol) | TODO | TODO |
-| ethereum/contracts/zksync/facets/Base.sol | TODO | TODO |
-| ethereum/contracts/zksync/facets/DiamondCut.sol | TODO | TODO |
-| ethereum/contracts/zksync/facets/Executor.sol | TODO | TODO |
-| ethereum/contracts/zksync/facets/Getters.sol | TODO | TODO |
-| ethereum/contracts/zksync/facets/Governance.sol | TODO | TODO |
-| ethereum/contracts/zksync/facets/Mailbox.sol | TODO | TODO |
+| [ethereum/contracts/zksync/DiamondProxy.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/DiamondProxy.sol) | 55 |  |
+| [ethereum/contracts/zksync/DiamondInit.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/DiamondInit.sol) | 63 |  |
+| [ethereum/contracts/zksync/Config.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Config.sol) | 82 | |
+| [ethereum/contracts/zksync/Storage.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Storage.sol) | 102 | |
+| [ethereum/contracts/zksync/facets/Base.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Base.sol) | 25 | |
+| [ethereum/contracts/zksync/facets/DiamondCut.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/DiamondCut.sol) | 137 | |
+| [ethereum/contracts/zksync/facets/Executor.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Executor.sol) | 388 | |
+| [ethereum/contracts/zksync/facets/Getters.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Getters.sol) | 188 | |
+| [ethereum/contracts/zksync/facets/Governance.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Governance.sol) | 110 | |
+| [ethereum/contracts/zksync/facets/Mailbox.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/facets/Mailbox.sol) | 232 | |
 | Verifier| | |
-| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Verifier.sol) | TODO | TODO |
-| [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | TODO | TODO |
+| [ethereum/contracts/zksync/Verifier.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Verifier.sol) | 237 | |
+| [ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol) | 705 | |
 | Libraries | | |
-| ethereum/contracts/zksync/libraries/Diamond.sol | TODO | TODO |
-| ethereum/contracts/zksync/libraries/Merkle.sol | TODO | TODO |
-| ethereum/contracts/zksync/libraries/PairingsBn254.sol | TODO | TODO |
-| ethereum/contracts/zksync/libraries/TranscriptLib.sol | TODO | TODO |
-| ethereum/contracts/zksync/libraries/PriorityQueue.sol | TODO | TODO |
+| [ethereum/contracts/zksync/libraries/Diamond.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/Diamond.sol) | 291 | |
+| [ethereum/contracts/zksync/libraries/Merkle.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/Merkle.sol) | 39 | |
+| [ethereum/contracts/zksync/libraries/PairingsBn254.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/PairingsBn254.sol) | 276 | |
+| [ethereum/contracts/zksync/libraries/TranscriptLib.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/TranscriptLib.sol) | 47 | |
+| [ethereum/contracts/zksync/libraries/PriorityQueue.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/libraries/PriorityQueue.sol) | 81 | |
 | Interfaces | | |
-| ethereum/contracts/zksync/interfaces/IDiamondCut.sol | TODO |  |
-| ethereum/contracts/zksync/interfaces/IExecutor.sol | TODO |  |
-| ethereum/contracts/zksync/interfaces/IGetters.sol | TODO |  |
-| ethereum/contracts/zksync/interfaces/IGovernance.sol | TODO |  |
-| ethereum/contracts/zksync/interfaces/IMailbox.sol | TODO |  |
-| ethereum/contracts/zksync/interfaces/IZkSync.sol | TODO |  |
+| [ethereum/contracts/zksync/interfaces/IDiamondCut.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/interfaces/IDiamondCut.sol) | 36 |  |
+| [ethereum/contracts/zksync/interfaces/IExecutor.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/interfaces/IExecutor.sol) | 86 |  |
+| [ethereum/contracts/zksync/interfaces/IGetters.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/interfaces/IGetters.sol) | 75 |  |
+| [ethereum/contracts/zksync/interfaces/IGovernance.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/interfaces/IGovernance.sol) | 49 |  |
+| [ethereum/contracts/zksync/interfaces/IMailbox.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/interfaces/IMailbox.sol) | 102 |  |
+| [ethereum/contracts/zksync/interfaces/IZkSync.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/zksync/interfaces/IZkSync.sol) | 11 |  |
 
 ### Bridges
 
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| ethereum/contracts/bridge/L1ERC20Bridge.sol | TODO | TODO |
-| ethereum/contracts/bridge/L1EthBridge.sol | TODO | TODO |
-| ethereum/contracts/bridge/interfaces/IL1Bridge.sol | TODO |  |
-| ethereum/contracts/bridge/interfaces/IL2Bridge.sol | TODO |  |
+| [ethereum/contracts/bridge/L1ERC20Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/L1ERC20Bridge.sol) | 288 | TODO |
+| [ethereum/contracts/bridge/L1EthBridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/L1EthBridge.sol) | 246 | TODO |
+| [ethereum/contracts/bridge/interfaces/IL1Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/interfaces/IL1Bridge.sol) | 42 |  |
+| [ethereum/contracts/bridge/interfaces/IL2Bridge.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/bridge/interfaces/IL2Bridge.sol) | 26 |  |
 
 ### Other
 
 | Contract | SLOC | Libraries used |  
 | ----------- | ----------- | ----------- |
-| ethereum/contracts/common/AllowList.sol | TODO |  |
-| ethereum/contracts/common/AllowListed.sol | TODO |  |
-| ethereum/contracts/common/L2ContractHelper.sol | TODO |  |
-| ethereum/contracts/common/ReentrancyGuard.sol | TODO |  |
-| ethereum/contracts/libraries/UncheckedMath.sol | TODO |  |
-| ethereum/contracts/libraries/UnsafeBytes.sol | TODO |  |
-| ethereum/contracts/interfaces/IAllowList.sol | TODO |  |
+| [ethereum/contracts/common/AllowList.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/AllowList.sol) | 165 |  |
+| [ethereum/contracts/common/AllowListed.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/AllowListed.sol) | 19 |  |
+| [ethereum/contracts/common/L2ContractHelper.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/L2ContractHelper.sol) | 88 |  |
+| [ethereum/contracts/common/ReentrancyGuard.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/ReentrancyGuard.sol) | 87 |  |
+| [ethereum/contracts/libraries/UncheckedMath.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/libraries/UncheckedMath.sol) | 17 |  |
+| [ethereum/contracts/libraries/UnsafeBytes.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/libraries/UnsafeBytes.sol) | 45 |  |
+| [ethereum/contracts/interfaces/IAllowList.sol](https://github.com/code-423n4/2022-10-zksync/blob/contest-prepare/ethereum/contracts/common/interfaces/IAllowList.sol) | 70 |  |
 
 
 ## L2 contracts
@@ -129,6 +129,42 @@ While we are in Alpha version of the system it is assumed that Matter Labs, an o
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+All contracts are divided into `ethereum` and `zksync` subfolders, each of which contains a hardhat project with related contracts.
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+## L1 contracts
+
+Select the correct folder:
+
+```terminal
+  cd ethereum
+```
+
+Install dependencies:
+
+```terminal
+  yarn
+```
+
+Run tests:
+```terminal
+  yarn test
+```
+
+## L2 contracts
+
+Select the correct folder:
+
+```terminal
+  cd zksync
+```
+
+Install dependencies:
+
+```terminal
+  yarn
+```
+
+Run tests:
+```terminal
+  yarn test
+```
