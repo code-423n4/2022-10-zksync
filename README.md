@@ -21,7 +21,7 @@
 6. `unfreezeDiamond`/`emergencyFreezeDiamond`/`cancelDiamondCutProposal` are susceptible to reorg attack.
 7. L1 -> L2 transactions are free, which can lead to DoS attack.
 
-The C4udit output for the contest can be found here, [include link to C4udit report], within an hour of contest opening.
+The C4udit output for the contest can be found [here](https://gist.github.com/Picodes/1f87a82e954cc749dea9d9961d5f4dff).
 
 *Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
