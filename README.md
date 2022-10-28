@@ -19,6 +19,7 @@
 4. Solidity version is not pinned in the source files. It is pinned in the [config](https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts#L21) instead.
 5. Implementation of the Diamond Cut is not fully EIP-2535 compatible, because of missing check for that replaced facet is distinct from old one.
 6. `unfreezeDiamond`/`emergencyFreezeDiamond`/`cancelDiamondCutProposal` are susceptible to reorg attack.
+7. L1 -> L2 transactions are free, which can lead to DoS attack.
 
 The C4udit output for the contest can be found here, [include link to C4udit report], within an hour of contest opening.
 
@@ -26,11 +27,12 @@ The C4udit output for the contest can be found here, [include link to C4udit rep
 
 # Overview
 
-zkSync 2.0 is a permissionless general-purpose ZK rollup. Similar to many L1 blockchains and sidechains it enables deployment and interaction with turing-complete smart contracts.
+zkSync 2.0 is a permissionless general-purpose ZK rollup. Similar to many L1 blockchains and sidechains it enables deployment and interaction with Turing-complete smart contracts.
 
 Although the audit is focused on the L1 part, a few notes to have a wider picture:
 
 - L2 smart contracts are executed on a zkEVM.
+- zkEVM bytecode is different from the L1 EVM.
 - There is a Solidity and Vyper compilers for L2 smart contracts.
 - There is a standard way to pass messages between L1 and L2. That is a part of the protocol.
 - There is no escape hatch mechanism yet, but it is planned to have one.
@@ -40,9 +42,10 @@ More can be read in the [documentation](https://v2-docs.zksync.io/dev/fundamenta
 ## Glossary
 
 - Governor - privileged address that controls the upgradability of the network and sets other privileged addresses.
-- Validator/Operator - privileged address that can commit/verify/execute L2 blocks.
+- Validator/Operator - a privileged address that can commit/verify/execute L2 blocks.
 - Facet - implementation contract. The word comes from the EIP-2535.
 - Security council - set of trusted addresses that can decrease upgrade timelock.
+- Ergs - a unit that measures the amount of computational effort required to execute specific operations on the zkSync v2 network.Analog of the gas on Ethereum.
 
 ## Overview
 
@@ -95,15 +98,25 @@ Separate facet, whose only function is providing `view` and `pure` methods. It a
 
 #### GovernanceFacet
 
-Controls changing of the privileged addresses such as governor and validators. Compact contract with a couple of functions, that is only needed to change the governor, validators or one of the parameters of the system (L2 bootloader bytecodehash, verifier address, verifier parameters, etc).
+Controls changing of the privileged addresses such as governor and validators. Compact contract with a couple of functions, that are only needed to change the governor, validators or one of the parameters of the system (L2 bootloader bytecode hash, verifier address, verifier parameters, etc).
 
 #### MailboxFacet
 
 The facet that handles L2 <-> L1 communication, an overview for which can be found in [docs](https://v2-docs.zksync.io/dev/developer-guides/bridging/l1-l2-interop.html).
 
-The Mailbox only cares about transferring information from L2 to L1 and the other way, but does not hold or transfer any assets (ETH, ERC20 tokens, or NFTs).
+The Mailbox only cares about transferring information from L2 to L1 and the other way but does not hold or transfer any assets (ETH, ERC20 tokens, or NFTs).
 
 L1 -> L2 communication is implemented as requesting an L2 transaction on L1 and executing it on L2. This means a user can call the function on L1 contract to save the data about the transaction in some queue. Later on, a validator can process such transactions on L2 and mark them as processed on the L1 priority queue. Currently, it is used only for sending information from L1 to L2 or implementing a multi-layer protocol, but it is planned to use a priority queue for the censor-resistance mechanism. Relevant functions for L1 -> L2 communication: `requestL2Transaction`/`l2TransactionBaseCost`/`serializeL2Transaction`.
+
+NOTE: For each executed transaction L1 -> L2, the system program necessarily sends an L2 -> L1 log. 
+
+The semantics of such L2 -> L1 log are always:
+- sender = BOOTLOADER_ADDRESS
+- key = hash(L1ToL2Transaction)
+- value = status of the processing transaction (1 - success & 0 for fail)
+- isService = true (just a conventional value)
+- l2ShardId = 0 (means that L1 -> L2 transaction was processed in a rollup shard, other shards are not available yet anyway)
+- txNumberInBlock = number of transaction in the block
 
 L2 -> L1 communication, in contrast to L1 -> L2 communication, is based only on transferring the information, and not on the transaction execution on L1.
 
@@ -111,7 +124,7 @@ From the L2 side, there is a special zkEVM opcode that saves `l2ToL1Log` in the 
 
 From the L1 side, for each L2 block, a Merkle root with such logs in leaves is calculated. Thus, a user can provide Merkle proof for each `l2ToL1Logs`.
 
-*NOTE*: The `l2ToL1Log` structure consists of fixed size fields! Because of this, it is inconvenient to send a lot of data from L2 and to prove that they were sent on L1 using only `l2ToL1log`. To send a variable length message we use this trick:
+*NOTE*: The `l2ToL1Log` structure consists of fixed-size fields! Because of this, it is inconvenient to send a lot of data from L2 and to prove that they were sent on L1 using only `l2ToL1log`. To send a variable-length message we use this trick:
 
 - One of the system contracts accepts an arbitrary length message and sends a fixed length message with parameters `senderAddress == this`, `marker == true`, `key == msg.sender`, `value == keccak256(message)`.
 - The contract on L1 accepts all sent messages and if the message came from this system contract it requires that the preimage of `value` be provided.
@@ -122,13 +135,21 @@ A contract that accepts L2 blocks, enforces data availability and checks the val
 
 The state transition is divided into three stages:
 
-- `commitBlocks` - check L2 block timestamp, save data for a block, and prepare data for zk-proof.
+- `commitBlocks` - check L2 block timestamp, process the L2 logs, save data for a block, and prepare data for zk-proof.
 - `proveBlocks` - validate zk-proof.
 - `executeBlocks` - finalize the state, marking L1 -> L2 communication processing, and saving Merkle tree with L2 logs.
 
+When a block is committed, we process an L2 -> L1 logs. The information we are checking is related to L2 and is not included in the scope of this contest. Here are the invariants that are expected there:
+
+- The only one L2 -> L1 log from the  `L2_SYSTEM_CONTEXT_ADDRESS`, with the `key == l2BlockTimestamp` and `value == l2BlockHash`.
+- Several (or none) logs from the  `L2_KNOWN_CODE_STORAGE_ADDRESS` with the `key == bytecodeHash`, where bytecode is marked as a known factory dependency.
+- Several (or none) logs from the `L2_BOOTLOADER_ADDRESS` with the `key == canonicalTxHash` where `canonicalTxHash` is a hash of processed L1 -> L2 transaction.
+- Several (of none) logs from the `L2_TO_L1_MESSENGER` with the `key == hashedMessage` where `hashedMessage` is a hash of an arbitrary-length message that is sent from L2
+- Several (or none) logs from other addresses with arbitrary parameters.
+
 #### Bridges
 
-Bridges are completely separate contracts from the Diamond. They are a wrapper for L1 <-> L2 communication on contracts on both L1 and L2. The one counterpart locks funds and sends a request to mint bridged assset on another side. The opposite, the user can burn funds on one side and unlock them on the other.
+Bridges are completely separate contracts from the Diamond. They are a wrapper for L1 <-> L2 communication on contracts on both L1 and L2. The one counterpart locks funds and sends a request to mint bridged assets on another side. On the opposite, the user can burn funds on one side and unlock them on the other.
 
 We propose two "default" bridge implementations for ERC20 tokens and ether. Please note, that anyone can create a different bridge by the same principle, "default" implementation is needed for the convenience to bridge any asset without developing a separate mechanism for bridging. 
 
@@ -147,7 +168,31 @@ The ether bridge is special because it is the only place where native L2 ether c
 
 #### Allowlist
 
-Auxiliary contract that controls the permission access list. It is used in bridges and diamond proxy to control which addresses can interact with them in Alpha release. 
+The auxiliary contract controls the permission access list. It is used in bridges and diamond proxies to control which addresses can interact with them in the Alpha release. 
+
+### L2 specifics 
+
+Although the interaction with L2 is very similar to what is in L1, the system has differences and unique concepts. Rules for generating l2 addresses, ergs(gas) metering and system contracts this is something to consider when reviewing the code.
+
+#### Deployment
+
+The L2 deployment process is different from Ethereum. 
+
+In L1, the deployment always goes through two opcodes `create` and `create2`, each of which provides its address derivation. The parameter of these opcodes is the so-called "init bytecode" - a bytecode that returns the bytecode to be deployed. This works well in L1 but is sub-optimal for L2.
+
+In the case of L2, there are also two ways to deploy contracts - `create` and `create2`. However, the expected input parameters for `create` and `create2` are different. It accepts the hash of bytecode, rather than full bytecode. Therefore, users pay less for contract creation and don't need to send full contract code by the network whenever deployed. But how does the validator know the preimage of the bytecode hashes to execute the code? 
+
+Here comes the concept of factory dependencies! Factory dependencies are a list of bytecode hashes whose preimages were shown on L1 (data is always available). Such bytecode hashes can be deployed, others - no. Note that they can be added to the system by either L2 transaction or L1 -> L2 communication, where you can specify the full bytecode and the system will mark it as known and allows you to deploy it. 
+
+Besides that, due to bytecode differences for L1 and L2 contracts, we decided to make address derivation different. This applies to both `create` and `create2` and means that the contract deployed in L1 can't have a collision with the contract in L2. Please note that EOA address derivation is the same as on Ethereum. 
+
+So,
+
+- L2 contracts are deployed by bytecode hash, not by full bytecode
+- Factory dependencies - list of bytecode hashes that can be deployed on L2
+- Address derivation for `create`/`create2` on L1 and L2 is different
+
+You can find more on the [documentation](https://v2-docs.zksync.io/dev/developer-guides/contracts/contracts.html#solidity-vyper-support)](https://v2-docs.zksync.io/dev/developer-guides/contracts/contracts.html#solidity-vyper-support).
 
 # Scope
 

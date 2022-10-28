@@ -29,10 +29,13 @@ struct DiamondCutStorage {
 /// @param isService A boolean flag that is part of the log along with `key`, `value`, and `sender` address.
 /// This field is required formally but does not have any special meaning.
 /// @param txNumberInBlock The L2 transaction number in a block, in which the log was sent
-/// @param sender The L2 address which sent the log
+/// @param sender The L2 address which sent the log. 
 /// @param key The 32 bytes of information that was sent in the log
 /// @param value The 32 bytes of information that was sent in the log
 // Both `key` and `value` are arbitrary 32-bytes selected by the log sender
+/// @dev The sender is an `address` type, although we are using `uint256` for addreses in `L2CanonicalTransaction`.
+/// It is made on purpose to make circuits easier, but changing the format of L2 -> L1 log format would be a non-breaking 
+/// change for user and devs so it is fine.
 struct L2Log {
     uint8 l2ShardId;
     bool isService;
