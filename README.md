@@ -45,7 +45,7 @@ More can be read in the [documentation](https://v2-docs.zksync.io/dev/fundamenta
 - Validator/Operator - a privileged address that can commit/verify/execute L2 blocks.
 - Facet - implementation contract. The word comes from the EIP-2535.
 - Security council - set of trusted addresses that can decrease upgrade timelock.
-- Ergs - a unit that measures the amount of computational effort required to execute specific operations on the zkSync v2 network.Analog of the gas on Ethereum.
+- Ergs - a unit that measures the amount of computational effort required to execute specific operations on the zkSync v2 network. Analog of the gas on Ethereum.
 
 ## Overview
 
@@ -139,10 +139,10 @@ The state transition is divided into three stages:
 - `proveBlocks` - validate zk-proof.
 - `executeBlocks` - finalize the state, marking L1 -> L2 communication processing, and saving Merkle tree with L2 logs.
 
-When a block is committed, we process an L2 -> L1 logs. The information we are checking is related to L2 and is not included in the scope of this contest. Here are the invariants that are expected there:
+When a block is committed, we process L2 -> L1 logs. The information we are checking is related to L2 and is not included in the scope of this contest. Here are the invariants that are expected there:
 
-- The only one L2 -> L1 log from the  `L2_SYSTEM_CONTEXT_ADDRESS`, with the `key == l2BlockTimestamp` and `value == l2BlockHash`.
-- Several (or none) logs from the  `L2_KNOWN_CODE_STORAGE_ADDRESS` with the `key == bytecodeHash`, where bytecode is marked as a known factory dependency.
+- The only one L2 -> L1 log from the `L2_SYSTEM_CONTEXT_ADDRESS`, with the `key == l2BlockTimestamp` and `value == l2BlockHash`.
+- Several (or none) logs from the `L2_KNOWN_CODE_STORAGE_ADDRESS` with the `key == bytecodeHash`, where bytecode is marked as a known factory dependency.
 - Several (or none) logs from the `L2_BOOTLOADER_ADDRESS` with the `key == canonicalTxHash` where `canonicalTxHash` is a hash of processed L1 -> L2 transaction.
 - Several (of none) logs from the `L2_TO_L1_MESSENGER` with the `key == hashedMessage` where `hashedMessage` is a hash of an arbitrary-length message that is sent from L2
 - Several (or none) logs from other addresses with arbitrary parameters.
@@ -172,7 +172,7 @@ The auxiliary contract controls the permission access list. It is used in bridge
 
 ### L2 specifics 
 
-Although the interaction with L2 is very similar to what is in L1, the system has differences and unique concepts. Rules for generating l2 addresses, ergs(gas) metering and system contracts this is something to consider when reviewing the code.
+Although the interaction with L2 is very similar to what is in L1, the system has differences and unique concepts. Rules for generating l2 addresses, ergs (gas) metering and system contracts are something to consider when reviewing the code.
 
 #### Deployment
 
@@ -180,13 +180,13 @@ The L2 deployment process is different from Ethereum.
 
 In L1, the deployment always goes through two opcodes `create` and `create2`, each of which provides its address derivation. The parameter of these opcodes is the so-called "init bytecode" - a bytecode that returns the bytecode to be deployed. This works well in L1 but is sub-optimal for L2.
 
-In the case of L2, there are also two ways to deploy contracts - `create` and `create2`. However, the expected input parameters for `create` and `create2` are different. It accepts the hash of bytecode, rather than full bytecode. Therefore, users pay less for contract creation and don't need to send full contract code by the network whenever deployed. But how does the validator know the preimage of the bytecode hashes to execute the code? 
+In the case of L2, there are also two ways to deploy contracts - `create` and `create2`. However, the expected input parameters for `create` and `create2` are different. It accepts the hash of the bytecode, rather than the full bytecode. Therefore, users pay less for contract creation and don't need to send the full contract code by the network whenever deploy. But how does the validator know the preimage of the bytecode hashes to execute the code? 
 
-Here comes the concept of factory dependencies! Factory dependencies are a list of bytecode hashes whose preimages were shown on L1 (data is always available). Such bytecode hashes can be deployed, others - no. Note that they can be added to the system by either L2 transaction or L1 -> L2 communication, where you can specify the full bytecode and the system will mark it as known and allows you to deploy it. 
+Here comes the concept of factory dependencies! Factory dependencies are a list of bytecode hashes whose preimages were shown on L1 (data is always available). Such bytecode hashes can be deployed, others - no. Note that they can be added to the system by either L2 transaction or L1 -> L2 communication, where you can specify the full bytecode and the system will mark it as known and allow you to deploy it.
 
-Besides that, due to bytecode differences for L1 and L2 contracts, we decided to make address derivation different. This applies to both `create` and `create2` and means that the contract deployed in L1 can't have a collision with the contract in L2. Please note that EOA address derivation is the same as on Ethereum. 
+Besides that, due to the bytecode differences for L1 and L2 contracts, we decided to make address derivation different. This applies to both `create` and `create2` and means that the contract deployed in L1 cannot have a collision with a contract in L2. Please note that EOA address derivation is the same as on Ethereum. 
 
-So,
+Thus:
 
 - L2 contracts are deployed by bytecode hash, not by full bytecode
 - Factory dependencies - list of bytecode hashes that can be deployed on L2

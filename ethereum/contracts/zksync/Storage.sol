@@ -35,7 +35,7 @@ struct DiamondCutStorage {
 // Both `key` and `value` are arbitrary 32-bytes selected by the log sender
 /// @dev The sender is an `address` type, although we are using `uint256` for addreses in `L2CanonicalTransaction`.
 /// It is made on purpose to make circuits easier, but changing the format of L2 -> L1 log format would be a non-breaking 
-/// change for user and devs so it is fine.
+/// change for users and devs so it is fine.
 struct L2Log {
     uint8 l2ShardId;
     bool isService;
