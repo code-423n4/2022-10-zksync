@@ -192,7 +192,7 @@ Thus:
 - Factory dependencies - list of bytecode hashes that can be deployed on L2
 - Address derivation for `create`/`create2` on L1 and L2 is different
 
-You can find more on the [documentation](https://v2-docs.zksync.io/dev/developer-guides/contracts/contracts.html#solidity-vyper-support)](https://v2-docs.zksync.io/dev/developer-guides/contracts/contracts.html#solidity-vyper-support).
+You can find more on the [documentation](https://v2-docs.zksync.io/dev/developer-guides/contracts/contracts.html#solidity-vyper-support).
 
 # Scope
 
