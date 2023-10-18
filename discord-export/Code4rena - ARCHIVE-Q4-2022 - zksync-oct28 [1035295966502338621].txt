@@ -1,0 +1,1119 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2022 / zksync-oct28
+==============================================================
+
+[10/27/2022 20:59] itsmetechjay (pinned)
+👋 Hello and welcome to the contest channel for the $165,500 USDC** zkSync v2 **contest!
+
+📆 Contest opens Friday, 28 October 2022 20:00 (20:00 UTC) and runs through Wednesday, 09 November 2022 20:00  (20:00 UTC) (12 days).
+
+Please give a warm welcome to the zkSync team, particularly @zksync | ML (primary point of contact) and @Vlad B | zkSync (backup), who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-10-zksync-v2-contest
+
+{Embed}
+https://code4rena.com/contests/2022-10-zksync-v2-contest
+Code4rena zkSync v2 contest
+$165,500 USDC
+28 October 2022—9 November 2022
+Code4rena - ARCHIVE-Q4-2022 - zksync-oct28 [1035295966502338621].txt_Files/8de58e44-43b0-47d8-b4de-25edc32c396e-03B44
+
+{Reactions}
+🔥 (10) 
+
+[10/27/2022 21:01] Quisex#4394
+Welcome !
+
+
+[10/27/2022 21:01] itsmetechjay
+Pinned a message.
+
+
+[10/27/2022 21:22] Franfran#5067
+hey
+
+
+[10/28/2022 04:17] .sha256yan
+zk bug report: prove there is a bug without revealing the bug
+
+{Reactions}
+😂 (25) 🧠 (8) chefskiss (3) 
+
+[10/28/2022 20:09] ladboy233
+Hello!
+
+
+[10/28/2022 20:09] ladboy233
+🧐
+
+
+[10/28/2022 20:11] thepicodes (pinned)
+**Automated findings:** https://gist.github.com/Picodes/1f87a82e954cc749dea9d9961d5f4dff
+
+
+[10/28/2022 20:14] liveactionllamac4 (pinned)
+@🐺wardens - please note that c4udit output has been posted above and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+**Automated findings:** https://gist.github.com/Picodes/1f87a82e954cc749dea9d9961d5f4dff
+
+This will also be linked in the contest README file shortly.
+
+{Reactions}
+👆 (6) 
+
+[10/28/2022 20:14] liveactionllamac4
+Pinned a message.
+
+
+[10/28/2022 20:14] liveactionllamac4
+Pinned a message.
+
+
+[10/28/2022 20:26] nine_k
+sorry @bender-ml i disabled our over-zealous automod :/ i'll dm you your message if you want to try again
+
+
+[10/28/2022 20:27] benderml.
+Hello @everyone and welcome to zkSync contest! While you are busy looking at the documentation and the code I will briefly introduce our team. Please welcome:
+- @zksync | ML and @Vlad B | zkSync, who are very experienced Smart Contract Security engineers and understand deeply every detail of our system
+- @bxpana ∎ | Never DMs First, beloved Community Manager who you might already know from zkSync Discord channel
+- @arose, Head of Engineering
+- and yours truly, Head of Security
+We are here if you have questions or any feedback. Good luck and have fun!
+
+{Reactions}
+🙏 (17) 🚀 (8) hearteyesrobot (2) catvibe (7) 
+
+[10/28/2022 21:04] road220
+some info about time-zones would be also helpful!
+
+
+[10/28/2022 21:05] benderml.
+Absolutely! We are mostly between UTC and UTC+3.
+
+{Reactions}
+🔥 (3) 
+
+[10/28/2022 22:48] bxpana
+Hello hello everyone!! Great to have everyone here and look forward to answering anyone's questions 😁
+
+{Reactions}
+peepowave (7) 
+
+[10/29/2022 04:30] chaduke3730
+glad to join zksync contest, I tried this protocol before
+
+
+[10/29/2022 07:08] .sha256yan
+```
+ethereum/contracts/zksync/Plonk4VerifierWithAccessToDNext.sol
+ethereum/contracts/zksync/Verifier.sol
+ethereum/contracts/zksync/libraries/PairingsBn254.sol
+ethereum/contracts/zksync/libraries/TranscriptLib.sol
+``` where can I learn what these are doing,? I know they're out of scope but curious
+
+
+[10/29/2022 07:41] rohan16
+Check out the feature of graph in vscode you will be able to identify
+
+
+[10/29/2022 07:41] rohan16
+Clone the whole file
+
+
+[10/29/2022 07:41] rohan16
+From github
+
+
+[10/29/2022 08:58] VIRUU#0904
+Hello
+
+
+[10/29/2022 09:22] olyvia7135
+Hello
+
+
+[10/29/2022 10:03] supernovahs
+yoo
+
+
+[10/29/2022 11:55] road220
+the same, but on immunefi!
+
+
+[10/29/2022 12:10] ladboy233
+Time to grind on diamond proxy.
+
+
+[10/29/2022 12:10] ladboy233
+I see a hand of project begin to use this pattern.
+
+
+[10/29/2022 16:08] chaduke3730
+great pattern to learn
+
+
+[10/29/2022 21:27] aviggiano
+I think this message does not need a @ 
+
+by this point everyone should know that i++ won't award anything
+
+{Reactions}
+😂 (2) 
+
+[10/29/2022 23:21] zksync.ml
+The following link may help:
+https://github.com/matter-labs/awesome-zero-knowledge-proofs#general-introduction
+
+{Embed}
+https://github.com/matter-labs/awesome-zero-knowledge-proofs
+GitHub - matter-labs/awesome-zero-knowledge-proofs: A curated list ...
+A curated list of awesome things related to learning Zero-Knowledge Proofs (ZKP). - GitHub - matter-labs/awesome-zero-knowledge-proofs: A curated list of awesome things related to learning Zero-Kno...
+Code4rena - ARCHIVE-Q4-2022 - zksync-oct28 [1035295966502338621].txt_Files/awesome-zero-knowledge-proofs-1D92D
+
+{Reactions}
+👍 (2) 
+
+[10/30/2022 10:28] .sha256yan
+just what i was after; thanks
+
+
+[10/30/2022 14:28] chaduke3730
+good morning, who (or which contract) will call *initialize* in *diamondInit*?
+
+
+[10/30/2022 15:19] vladbochok
+The DiamondProxy delegatecall the `diamondInit` in the constructor, it is a part of the proxy initialization
+
+
+[10/30/2022 17:19] ivok1#4124
+Hi zksync team
+I am joining this contest
+
+{Reactions}
+❤️ (2) 
+
+[10/30/2022 17:32] chaduke3730
+@Vlad B | zkSyncthanks the constructor of DiamondProxy calls Diamond.diamondCut(_diamondCut), what does the _diamondCut look like as this the first diamondCut? (I din't see diamondInit in the constructor at this moment)
+
+
+[10/30/2022 19:35] vladbochok
+@chaduke Yeah, so in practice, we deploy the `DiamondProxy` with a diamond cut that contains `DiamondInit` contract address as initialization contact and corresponding calldata to call the `initialize` function from the `DiamondInit`. Regarding the facet cuts - just a list of all facets from the `ethereum/contracts/zksync/facets` (except `Base.sol` ).
+
+
+[10/30/2022 20:40] chaduke3730
+@Vlad B | zkSyncgot it thanks.
+
+
+[10/30/2022 20:42] chaduke3730
+I suppose Base is  used for inheriance ONLY
+
+
+[10/30/2022 20:57] vladbochok
+True. That's why I have pointed out that it is not deployed 🙂
+
+
+[10/30/2022 21:03] chaduke3730
+Noticed that 🙂 thanks
+
+{Reactions}
+👍 
+
+[10/30/2022 21:03] chaduke3730
+@Vlad B | zkSync
+
+
+[10/30/2022 21:28] chaduke3730
+so DamondInit is actually called  via this line? https://github.com/code-423n4/2022-10-zksync/blob/4db6c596931a291b17a4e0e2929adf810a4a0eed/ethereum/contracts/zksync/libraries/Diamond.sol#L113
+
+
+[10/30/2022 23:55] wadefak04
+anyone has submit this contest?
+
+
+[10/31/2022 00:13] chaduke3730
+I submitted some
+
+
+[10/31/2022 03:08] perseverancesuccess2021
+I have a question: For the test case, I see the test cases were written using hardhat and ts. I think for the POC, I will try to use it. But I am more productive if I write using Foundry. Does the project accept POC in Foundry also? Is there any limitation on the framework for POC? Thank you for answering.
+
+
+[10/31/2022 03:14] wadefak04
+what kind are you submit mate? i need some advice
+
+
+[10/31/2022 03:17] birdy0219
+Being a mere proof of concept I doubt it matters which framework you use, provided it interacts with the contracts appropriately and does indeed prove your exploit concept
+
+{Reactions}
+👍 (2) 
+
+[10/31/2022 03:31] pfapostol
+The comments in assembler are great. If they were in my first competitions, it would be much easier to learn. Now, for me, it is not as important, as earlier, but still cool
+
+{Reactions}
+❤️ 
+
+[10/31/2022 03:38] perseverancesuccess2021
+Thank you very much for your answer.
+
+{Reactions}
+👍 
+
+[10/31/2022 04:11] perseverancesuccess2021
+Hello guys, it is my first time to see the $$ in the solidity contract code. When i compile the contracts, I got the following error related to $$ in config.sol  Do you know how to fix this. I use the Foundry to compile.   Compiler run failed
+error[7576]: DeclarationError: Undeclared identifier.
+  --> test/contracts/zksync/Config.sol:60:42:
+   |
+60 | uint256 constant UPGRADE_NOTICE_PERIOD = $$(defined(UPGRADE_NOTICE_PERIOD) ? UPGRADE_NOTICE_PERIOD : "14 days");
+   |                                          ^^
+
+
+
+error[7576]: DeclarationError: Undeclared identifier.
+  --> test/contracts/zksync/Config.sol:60:45:
+   |
+60 | uint256 constant UPGRADE_NOTICE_PERIOD = $$(defined(UPGRADE_NOTICE_PERIOD) ? UPGRADE_NOTICE_PERIOD : "14 days");
+
+
+[10/31/2022 08:15] zksync.ml
+True!
+
+
+[10/31/2022 08:22] zksync.ml
+Hey! you can find the value of this parameter in:
+https://github.com/code-423n4/2022-10-zksync/blob/main/ethereum/hardhat.config.ts
+
+{Reactions}
+👍 
+
+[10/31/2022 08:26] zksync.ml
+You can simply just replace it with zero, or define the parameter using the `foundry.toml`:
+https://github.com/foundry-rs/foundry/tree/master/config
+
+{Reactions}
+👍 
+
+[10/31/2022 09:11] road220
+do you guys have bridges deployed on testnets? I mean on goerli/rinkeby
+
+
+[10/31/2022 09:20] zksync.ml
+Yeah!
+
+
+[10/31/2022 09:21] road220
+can I use them to play around using tenderly?
+
+
+[10/31/2022 09:26] zksync.ml
+I think it is better that @bender-ml elaborates upon it.
+
+
+[10/31/2022 09:32] road220
+and also, where can I find tests for bridges? As I got it correctly, there is no any coverage yet 😦
+
+
+[10/31/2022 09:41] road220
+@Vlad B | zkSync , would you mind if i dm you?
+
+
+[10/31/2022 10:46] benderml.
+Interacting with testnet bridges is fine, but I strongly suggest that you use it to understand the way they work, not to try edge cases or exploits. Everything done on a public testnet is inherently public and will no longer fall under responsible disclosure. For example for zkSync v1 it is explicitly mentioned in our Bug Bounty here: https://immunefi.com/bounty/zksync/
+
+> The following activities are prohibited by this bug bounty program:
+> Any testing with mainnet or public testnet contracts; all testing should be done on private testnets
+
+
+[10/31/2022 11:56] road220
+simulations are also prohibited? Anyway, gotcha, thanks!
+
+
+[10/31/2022 12:44] benderml.
+I am not sure what you mean by simulations here. The rule of thumb is "do not do anything that may make a vulnerability or an exploit public".
+
+
+[10/31/2022 12:54] vladbochok
+Sure, go ahead
+
+
+[10/31/2022 12:59] vladbochok
+We use solpp preprocessor, idk how it works with foundry, and would suggest compiling via `yarn build` and then finding solidity files in a `cache/solpp-generated-contracts`. So, you can see contracts after the preprocessor and use them as you wish.
+
+
+[10/31/2022 13:16] vladbochok
+It is a bad idea, if you find something other contest participants may figure out the bug and reply to the report 🙂
+
+
+[10/31/2022 14:45] soosh4618
+Are the contracts deployed on Goerli testnet the same as the in-scope contracts? If I forked Goerli for a POC is it valid?
+
+
+[10/31/2022 15:10] vladbochok
+@Soosh Unfortunately, it is not the same. Small changes, but still no guarantee that we didn't change what you try to break
+
+{Reactions}
+✅ (2) 
+
+[10/31/2022 15:33] benderml.
+Actually `olesHolem` and `andreysobol` from our team have implemented it a while ago at ETH Prague hackathon: https://github.com/andreysobol/zkbugbounty
+
+{Embed}
+https://github.com/andreysobol/zkbugbounty
+GitHub - andreysobol/zkbugbounty
+Contribute to andreysobol/zkbugbounty development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - zksync-oct28 [1035295966502338621].txt_Files/zkbugbounty-EC455
+
+{Reactions}
+👀 
+
+[11/01/2022 00:07] acegawd
+@Vlad B | zkSync DM
+
+
+[11/01/2022 00:10] perseverancesuccess2021
+Hello Zksync team, I have a question: So the document, it is stated that "bridges are completely separate contracts from the Diamond". so what is the proxy type do you intend to use for L1ETH Bridge and L1ERC20 Bridge? Can you specify the type of proxy you want to use and share the link to the source of proxy so that I can write the test cases for  L1ETH Bridge and L1ERC20 Bridge ?  Thank you.
+
+{Reactions}
+👍 
+
+[11/01/2022 03:27] jayjonah8
+@Vlad B | zkSync Sent a DM
+
+
+[11/01/2022 05:23] vladbochok
+Hey, sure. It is a transparent proxy: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/proxy/transparent/TransparentUpgradeableProxy.sol
+
+{Reactions}
+👍 
+
+[11/01/2022 06:43] dinesh11g
+@zksync | ML @Vlad B | zkSync there were many "DeclarationErrors"
+
+
+[11/01/2022 06:47] vladbochok
+How do you compile the contracts? Please use `yarn build` and see built contracts in a `cache/solpp-generated-contracts`
+
+
+[11/01/2022 06:56] dinesh11g
+check DM
+
+
+[11/01/2022 10:09] prefix4324
+@Vlad B | zkSync sent you a DM
+
+
+[11/01/2022 10:40] benderml.
+@0xmint @jayjonah8 @Dinesh11G @Prefix Vlad is out for the next couple of days and may be slow to respond, please send your DM questions to @zksync | ML instead.
+
+{Reactions}
+👍🏾 (4) ❤️ (2) 
+
+[11/01/2022 18:55] acegawd
+@zksync | ML Dmed
+
+
+[11/02/2022 02:25] perseverancesuccess2021
+@zksync | ML  I sent you a DM. Please take a took. Thank you very much for your support.
+
+
+[11/02/2022 03:37] KingNFT#8007
+Are users allowed to bridge any ERC20 tokens from Ethereum to zkSync permissionlessly, or tokens must be added to allowlist first by governor?
+
+
+[11/02/2022 09:44] zksync.ml
+Actually, allowlist just stores the users' permissions to call the function on different contracts, it does not whitelist any tokens. So, any ERC20 token can be bridged from L1 to L2.
+
+
+[11/02/2022 09:49] immeas
+anyone available for a DM?
+
+{Reactions}
+👍🏻 
+
+[11/02/2022 21:27] .laezo
+trying to build and I get this error
+
+
+[11/02/2022 21:27] .laezo
+```Error in plugin @matterlabs/hardhat-zksync-solc: Docker Desktop is not running.
+Please open it and wait until it finishes booting.
+```
+
+
+[11/02/2022 23:38] zksync.ml
+Are you using the docker?
+
+
+[11/02/2022 23:39] .laezo
+no, are you required to use it?
+
+
+[11/03/2022 00:20] birdy0219
+The error suggests you should be, otherwise the project may require some further configuration for use without the docker
+
+
+[11/03/2022 03:07] smithcan
+ah... thankyou...
+
+
+[11/03/2022 13:55] chukusu
+Hey wardens
+
+
+[11/04/2022 16:35] narcos500
+Hy bro
+
+
+[11/04/2022 18:47] joestakey#0256
+Is there an implementation or mock of `IL2Messenger` available somewhere?
+
+{Reactions}
+👍🏻 
+
+[11/05/2022 02:51] KingNFT#8007
+hey, where can i get the implementations of SYSTEM_CONTRACTS on L2?
+
+{Reactions}
+👍🏻 
+
+[11/05/2022 06:57] Tomo | NinjAudit#7394
+@zksync | ML I sent you request to ask something 🙌
+
+{Reactions}
+👍🏻 
+
+[11/05/2022 08:38] soosh4618
+@zksync | ML same here, have a question
+
+{Reactions}
+👍🏻 
+
+[11/05/2022 10:50] csanuragjain
+@zksync | ML sent some questions, kindly have a look at your convinience 🙂
+
+{Reactions}
+👍🏻 
+
+[11/05/2022 13:04] zksync.ml
+Hey, sorry, it is out of scope. But, if you have question regarding something specific, I can help you.
+
+
+[11/05/2022 13:07] zksync.ml
+Hey, it is not available (out of scope). I can answer your question regarding that.
+
+
+[11/05/2022 13:47] chukusu
+Hey, what do we have to do as wardens
+
+{Reactions}
+PU_MegaMonkaS (2) 😂 
+
+[11/05/2022 14:10] chukusu
+😅😅😅
+
+
+[11/05/2022 14:42] joestakey#0256
+I just wanted to check the logic going on in `sendToL1()`,  from the docs I assumed it simply hashes the `_message`  argument (which can then be retrieved on L1), does it do anything else?
+
+{Reactions}
+👍🏻 
+
+[11/05/2022 15:08] ladboy233
+@zksync | ML May I please dm you？
+
+{Reactions}
+👍🏻 
+
+[11/07/2022 06:58] soosh4618
+What is the use case for `revertBlocks()` in `Executor.sol`? When/What condition will an operator call it?
+
+{Reactions}
+👍🏻 
+
+[11/07/2022 07:44] soosh4618
+Is it only if the zk proof is invalid?
+
+{Reactions}
+👍🏻 
+
+[11/07/2022 08:58] zksync.ml
+I just sent you a DM, thanks.
+
+{Reactions}
+✅ 
+
+[11/07/2022 08:58] zksync.ml
+I just sent you a DM, thanks.
+
+{Reactions}
+👍 
+
+[11/07/2022 09:45] vladbochok
+Hey wardens, I'm online again! Feel free to ask questions in a chat and DM me.
+
+{Reactions}
+👍🏻 (2) 
+
+[11/08/2022 00:45] acegawd
+Dmed you.
+
+
+[11/08/2022 13:52] SuldaanBeegsi#3044
+Dmed you 2 😄
+
+
+[11/08/2022 23:06] saksham#7993
+Anyone online from the zksync team?
+
+
+[11/08/2022 23:14] zksync.ml
+yes
+
+{Reactions}
+👍 
+
+[11/09/2022 12:11] anonnp
+Who can I DM?
+
+
+[11/09/2022 13:27] zksync.ml
+Feel free to DM me!
+
+
+[11/09/2022 13:33] vladbochok
+Same for me
+
+
+[11/09/2022 13:38] anonnp
+pls accept request @Vlad B | zkSync @zksync | ML
+
+
+[11/09/2022 14:55] anonnp
+Can I pls DM someone? no one responding still
+
+
+[11/09/2022 15:38] vladbochok
+Please check DM
+
+
+[11/09/2022 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens  The **zkSync v2** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+🔥 (11) 👏 (2) 💯 (2) 👋 (2) cyberheart (2) hearteyesrobot (3) 💎 (2) 
+
+[11/09/2022 20:02] chukusu
+I misseddd
+
+{Reactions}
+🪦 (4) ohno (2) 
+
+[11/09/2022 21:10] saksham#7993
+This was a fun one!
+
+
+[11/09/2022 21:37] lukejohn_
+I submiited mine
+
+
+[11/09/2022 23:18] axellab
+Nice 😘
+
+
+[11/10/2022 01:24] 0x_serial_coder
+I submitted and got emails, but I cannot see my findings on the web
+
+
+[11/10/2022 06:35] 0xsorrynotsorry
+The contest submissions will have public visibility once the report is completed. It's still in confidential status.
+
+
+[11/10/2022 06:49] 0x_serial_coder
+I meant while submitting the findings, there should be a web portal for you to edit your findings, right?
+
+In my case, the web portal didn't display my findings. 
+
+This was my second contest, but this problem happened in my first contest (blur contest) as well.
+
+So, I'm not sure if this problem happened to others? Or did I miss something?
+
+
+[11/10/2022 06:52] 0xsorrynotsorry
+Ah ok, I see what you mean.
+I just checked my submissions. Same, they're not on my tab either. Not sure whether this is the intended behavior but better to check this with C4 Team. Tagging @🥭 captainmango | C4 for visibility ^
+
+{Reactions}
+👍 (2) 
+
+[11/10/2022 06:54] 0x_serial_coder
+Thanks for your response.
+
+{Reactions}
+hi5 (2) 
+
+[11/10/2022 06:57] 0xsorrynotsorry
+Feel free to DM me, I will be happy to guide the new wardens. It's always a challenge having a cold start.
+
+{Reactions}
+🙏 (4) 
+
+[11/10/2022 17:54] captainmangoc4
+so you're just not seeing any findings in the findings tab? Is this the case for every contest, or just specific contests? cc @serial-coder
+
+
+[11/10/2022 18:07] 0x_serial_coder
+Hi, I could not see any findings on both of my contests (blur and zksync).
+
+{Reactions}
+thankyou (2) 
+
+[11/10/2022 18:21] captainmangoc4
+Do you see any errors in the console? Or failed network requests?
+
+
+[11/10/2022 18:22] captainmangoc4
+Well, maybe you don't have any findings on current contests. If this happens again with other contests, can you let me know if you see errors in the console?
+
+
+[11/10/2022 18:40] 0x_serial_coder
+My findings were submitted without errors, and I received all email confirmations. But the findings weren't just showing on the findings tab.
+
+
+[11/10/2022 18:49] captainmangoc4
+I was just wondering about any errors on the contest page when you open the findings tab.
+
+
+[11/10/2022 18:54] 0x_serial_coder
+There was no error. It just displayed sort of this message"no findings submitted" (or some default message I cannot remember precisely).
+
+{Reactions}
+👍 (2) 
+
+[11/11/2022 00:27] korkuthan.shm
+Hi
+
+{Reactions}
+👋 
+
+[11/11/2022 02:01] ak19966
+He has multiple versions of himself..!!!!
+
+{Reactions}
+😂 (2) 👆 (2) 
+
+[11/11/2022 06:03] 0xsorrynotsorry
+Yes, time to time I'm merging the warden application PR's. Previously we were interviewing the applicants for tech background proof as well.
+
+
+[11/11/2022 07:17] rohan16
+Happened with me
+
+{Reactions}
+😅 hi5 💪 
+
+[11/11/2022 17:38] chinmayf
+See the c4 leaderboard and you'll have a rough idea from it of how many users won any rewards
+
+
+[11/12/2022 01:25] chaduke3730
+@Ocean_SkyI guess 300 for each contest
+
+
+[11/12/2022 01:25] chaduke3730
+Each of us have to skip some due to busy schedules
+
+
+[12/03/2022 12:45] Tomo | NinjAudit#7394
+👀
+
+
+[12/03/2022 18:56] alextheentreprenerd
+Soon ™
+
+
+[12/03/2022 19:12] saksham#7993
+Next week gonna be interesting ig👀
+
+
+[12/03/2022 19:29] ladboy233
+👀
+
+
+[12/06/2022 06:16] chaduke3730
+next week!
+
+
+[12/07/2022 03:24] deekshith09
+👀
+
+
+[12/08/2022 18:47] utas3
+❤️
+
+
+[12/08/2022 20:59] ladboy233
+👀
+
+
+[12/08/2022 21:01] alextheentreprenerd
+I want to make sure I judged properly so need a couple days to gather feedback from Wardens and Sponsors, but it's really close
+
+{Reactions}
+yay (4) ❤️ (3) 
+
+[12/08/2022 23:06] chaduke3730
+@Alex The EntreprenerdThanks
+
+{Reactions}
+🫡 (2) 
+
+[12/11/2022 15:11] alextheentreprenerd
+Final checks today, steady lads
+
+
+[12/11/2022 15:17] ladboy233
+https://tenor.com/view/steady-steadymen-gif-14814888
+
+{Embed}
+https://tenor.com/view/steady-steadymen-gif-14814888
+Code4rena - ARCHIVE-Q4-2022 - zksync-oct28 [1035295966502338621].txt_Files/steady-steadymen-DC679.png
+
+
+[12/11/2022 23:11] birdy0219
+❤ that episode 😂
+
+
+[12/12/2022 08:37] saksham#7993
+👀
+
+
+[12/12/2022 17:00] ladboy233
+👀
+
+{Reactions}
+👀 (6) 👍 (3) 😰 (2) 
+
+[12/13/2022 18:04] chaduke3730
+??
+
+
+[12/13/2022 18:05] chaduke3730
+patience is a merit
+
+
+[12/13/2022 18:06] chaduke3730
+last reward for oct
+
+
+[12/13/2022 18:06] chaduke3730
+if any
+
+
+[12/13/2022 18:15] ladboy233
+I am just guessing: payout be like; 40K, 40K, 40K, 1K, 1K
+
+{Reactions}
+😂 
+
+[12/13/2022 18:16] ladboy233
+lol
+
+
+[12/13/2022 18:23] saksham#7993
+I'll be happy with the 1k🥹
+
+{Reactions}
+same 
+
+[12/15/2022 07:32] saksham#7993
+🥲
+
+
+[12/15/2022 08:56] xyzbtchunt
+Any update ??
+
+{Reactions}
+4739_Skeletor 💔 
+
+[12/15/2022 11:29] ladboy233
+👀
+
+
+[12/15/2022 11:30] hansfriese
+https://github.com/code-423n4/code423n4.com/pull/6081
+
+
+[12/15/2022 11:42] ladboy233
+yeap looks like it is this one
+
+
+[12/15/2022 11:44] jeiwan
+> 177,Soosh,M-02,2,2,3.9,1,3.9000000000000004,70985.01070663812,USDC,70985.01
+
+Not bad 🗿
+
+{Reactions}
+🤯 (5) hi5 
+
+[12/15/2022 11:45] jeiwan
+@Soosh Congrats!
+
+
+[12/15/2022 11:50] jeiwan
+And this is the finding:
+https://github.com/code-423n4/2022-10-zksync-findings/issues/259
+
+
+[12/15/2022 11:50] jeiwan
+👏
+
+
+[12/15/2022 11:51] soosh4618
+wtf. This is a lot
+
+{Reactions}
+👏 (4) 
+
+[12/15/2022 11:52] csanuragjain
+Many many congratulations @Soosh Incredible job, this was a very hard contest 🙂
+
+{Reactions}
+👆 
+
+[12/15/2022 11:52] soosh4618
+Thanks 😄
+
+
+[12/15/2022 11:52] soosh4618
+Thank you too!
+
+
+[12/15/2022 11:52] ladboy233
+70k！！
+
+
+[12/15/2022 11:53] ladboy233
+👍👍👍
+
+
+[12/15/2022 11:53] soosh4618
+I spent the most time for this contest so I'm glad it really paid off 😄
+
+{Reactions}
+🎉 (15) 👏 (4) chefskiss 
+
+[12/15/2022 11:57] saksham#7993
+These don't look like all the rewards though
+
+
+[12/15/2022 11:57] saksham#7993
+Congrats!
+
+
+[12/15/2022 12:03] a12jmx
+I'm gonna follow this and start going as deep as possible instead of as broad as possible because the latter has definitively not been working out for me 😆  And congrats Soosh!!! Extraordinary achievement! :hi5:
+
+
+[12/15/2022 12:06] csanuragjain
+https://tenor.com/view/bugs-bunny-looney-tunes-cash-money-counting-money-gif-17544086
+
+{Embed}
+https://tenor.com/view/bugs-bunny-looney-tunes-cash-money-counting-money-gif-17544086
+Code4rena - ARCHIVE-Q4-2022 - zksync-oct28 [1035295966502338621].txt_Files/bugs-bunny-looney-tunes-6263B.png
+
+{Reactions}
+😂 (4) 
+
+[12/15/2022 12:06] csanuragjain
+@Soosh  right now 😂
+
+
+[12/15/2022 12:07] saksham#7993
+@HE1M too lol , congrats to him too
+
+{Reactions}
+✅ 👏 (2) 
+
+[12/15/2022 12:13] he1m
+Thank you 🙂
+
+{Reactions}
+🤝 (4) 
+
+[12/15/2022 12:53] 0xsorrynotsorry
+Frankly, I was expecting that you will be on top of this contest. I saw your submissions were mindful and lit 🔥 congrats!
+
+
+[12/15/2022 13:03] he1m
+Thanks 🙂
+
+{Reactions}
+hi5 
+
+[12/15/2022 13:08] ak19966
+Happy new years wishes .. @Soosh @HE1M ... enjoy.. dudes....
+
+{Reactions}
+hi5 
+
+[12/15/2022 18:55] vladbochok
+Huge thanks for all of your work! It is amazing to see so many good reports. 
+We are looking for a smart contract engineer, sooo my DM is open...
+
+{Reactions}
+🙏 (3) chefskiss (4) 
+
+[12/15/2022 19:16] saksham#7993
+Is that pull request the final list for winners?
+
+
+[12/15/2022 20:44] cloudellie
+never final until it's merged
+
+{Reactions}
+C4Keycap (2) 
+
+[12/15/2022 21:23] itsmetechjay
+🤑 🎉 Awards for **zkSync v2**:
+
+$70,985.01 USDC » @Soosh 
+$34,676.27 USDC » @HE1M 
+$24,571.73 USDC » @codehacker 
+$2,320.96 USDC » @0x1f8b 
+$2,102.32 USDC » @chaduke 
+$2,102.32 USDC » @Tomo | NinjAudit 
+$2,102.32 USDC » @datapunk 
+$2,102.32 USDC » @0xSmartContract 
+$2,102.32 USDC » @brgltd 
+$1,785.36 USDC » @IllIllI 
+$1,785.36 USDC » @c3phas 
+$480.53 USDC » @Rolezn 
+$250.77 USDC » @jayjonah8 
+$250.77 USDC » @ctf_sec 
+$250.77 USDC » @cccz 
+$250.77 USDC » @0xladboy | Sparkware 
+$250.77 USDC » @pashov 
+$250.77 USDC » @rbserver 
+$229.76 USDC » @HardlyCodeMan 
+$229.76 USDC » @mcwildy 
+$229.76 USDC » @ReyAdmirado 
+$229.76 USDC » @gogo 
+$229.76 USDC » @TomJ 
+$229.76 USDC » @code-cipher 
+
+🏁 Findings summary
+---------------------------
+Med risk findings: 3 total, 2 unique
+Gas findings: 10 
+QA findings: 13
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+***Note: If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.***
+
+{Reactions}
+🎉 (8) hi5 (5) 🥲 (3) cyberheart C4Keycap 
+
+[12/15/2022 21:39] chaduke3730
+congrats to all, first time for me to earn more than 1000
+
+{Reactions}
+🎉 (18) nice (8) chefskiss (6) Clap (6) same 
+
+[12/15/2022 22:05] cloudellie
+:yay: Congrats!
+
+
+[12/15/2022 22:09] 0xa5df
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - zksync-oct28 [1035295966502338621].txt_Files/King_Neptune_Burger_Competition_1612202200-F9502.jpg
+
+{Reactions}
+😂 (17) 
+
+[12/15/2022 22:35] minh___
+close enough
+
+
+[12/15/2022 22:47] zksync.ml
+Thank you all for your effort and time! We received really good and helpful reports.
+
+{Reactions}
+🙏 (4) 🎉 (4) 
+
+[12/15/2022 23:07] ladboy233
+🥲
+
+
+[12/16/2022 00:04] road220
+Top 10 gas reports? We finally got it!
+
+{Reactions}
+🎉 (2) 
+
+[12/16/2022 01:38] birdy0219
+Gas report at #4
+
+
+[12/16/2022 01:39] birdy0219
+https://tenor.com/view/will-farrell-wedding-crashers-yey-yes-gif-14042018
+
+{Embed}
+https://tenor.com/view/will-farrell-wedding-crashers-yey-yes-gif-14042018
+Code4rena - ARCHIVE-Q4-2022 - zksync-oct28 [1035295966502338621].txt_Files/will-farrell-wedding-crashers-81F0B.png
+
+
+[12/16/2022 01:40] birdy0219
+Thanks Alex
+
+
+[12/16/2022 02:30] _oceansky
+Congrats bro!, hope you don't mind if i ask you noob query about your finding haha 😂  , need to learn fast from pro!
+
+
+[12/16/2022 02:39] birdy0219
+First time over $100 here 🙂
+
+{Reactions}
+nice (7) chefskiss (5) hi5 
+
+[12/16/2022 03:25] chaduke3730
+@Ocean_SkyThanks Bro, Let's learn from each other. I was just lucky this time I guess
+
+
+[12/16/2022 03:53] soosh4618
+@Alex The Entreprenerd can I dm you?
+
+
+[12/16/2022 14:32] alextheentreprenerd
+Sure
+
+
+[02/11/2023 23:43] ladboy233
+@zksync | ML @Vlad B | zkSync ZKSync token coming out? Any alpha leak? hahah
+
+
+[02/12/2023 10:03] vladbochok
+[∎∎     ]
+
+{Reactions}
+👀 
+
+[09/19/2023 12:51] daviyd
+:code4rena:
+
+
+==============================================================
+Exported 211 message(s)
+==============================================================
